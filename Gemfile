@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'annotate'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'haml-rails'
+gem 'devise'
 
 
 group :development, :test do
