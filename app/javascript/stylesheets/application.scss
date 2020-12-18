@@ -1,1 +1,37 @@
+// @import 'reset';
 @import '~bootstrap/scss/bootstrap';
+@import 'header';
+@import 'footer';
+@import 'user_registration';
+@import 'profile';
+
+
+body{
+  // background-image: url();
+  // background-size: ;
+  min-height: 100vh;
+  position: relative;
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+ 
+  // footerをしたに配置するためのcss
+  padding-bottom: 75px;
+  box-sizing: border-box;
+  // background-color:#fffff0;
+
+  a{
+    color: #000;
+  }
+}
+.container{
+  width: 80%;
+  margin: 0 auto;
+  // background-color: #fff;
+}
+
+.message{
+  position: absolute;
+  padding:5px 20px;
+  top: 10px;
+  left: 40%;
+  z-index: 1;
+}

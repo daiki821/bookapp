@@ -1,0 +1,59 @@
+.profile-box{
+  margin-top: 40px;
+  display: flex;
+  // 写真-------------
+  .profile-avatar-box{
+
+    .profile-avatar{
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+
+    }
+  }
+
+  .profile-info-box{
+    margin-left: 30px;
+
+    .profile-head-box{
+      display: flex;
+
+      // ユーザーネーム------
+      .profile-name-box{
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 40px;
+      }
+      
+
+    }
+
+
+    // フォローとフォロワー
+    .user-relation-box{
+      display: flex;
+      margin: 20px 0 10px;
+
+      .follower-box{
+        margin-right: 20px;
+      }
+    }
+
+
+    // 年齢と職業-----
+    .profile-foot-box{
+      display: flex;
+      font-size: 16px;
+      color: grey;
+      margin-top: 5px;
+      
+      .profile-birthday-box{
+        margin-right: 20px;
+      }
+    }
+
+  }
+
+  
+}

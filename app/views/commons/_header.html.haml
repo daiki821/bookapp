@@ -1,0 +1,24 @@
+%nav.navbar.navbar-expand-lg.navbar-light.nav-height
+  .container
+    = link_to 'SHIGOTOSHIRU', root_path, class:'text-white navbar-brand'
+    %button.text-white.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      %ul.navbar-nav.ml-auto
+        %li.nav-item
+          = link_to 'HOME', root_path , class: 'nav-link text-white' 
+        %li.nav-item
+          = link_to 'ログアウト',destroy_user_session_path, method: 'delete', class: 'nav-link text-white' 
+        %li.nav-item
+          = link_to 'ログイン', root_path, class: 'nav-link text-white' 
+        %li.nav-item.dropdown
+          %a#navbarDropdown.nav-link.dropdown-toggle.text-white{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            - if current_user
+              = current_user.username
+            -else
+              ログインしてください
+          .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+            = link_to 'マイページ', root_path, class: 'dropdown-item'
+            .dropdown-divider
+            = link_to 'ログアウト', root_path, class: 'dropdown-item'
+
