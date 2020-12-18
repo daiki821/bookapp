@@ -1,0 +1,17 @@
+.user-registration-box
+  %p.notice= notice
+  %p.alert= alert
+  %h2.user-registration-title  ログイン
+  .form-box
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.label :email, 'メールアドレス(必須)'
+        %br/
+        = f.email_field :email, autocomplete: "email",class: 'text'
+      .field
+        = f.label :password, 'パスワード(必須)'
+        %br/
+        = f.password_field :password, autocomplete: "new-password", type: 'password',class: 'text'  
+      .actions
+        = f.submit "ログイン",class: 'btn btn-outline-dark registration-btn'
+  = link_to 'ユーザー登録はこちら', new_user_registration_path, class: 'registration-link'
