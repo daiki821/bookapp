@@ -1,0 +1,17 @@
+.profile-box
+  .profile-avatar-box
+    = image_tag current_user.avatar? , class: 'profile-avatar'
+  .profile-info-box
+    .profile-head-box
+      .profile-name-box
+        = @user.username
+      .profile-btn-box
+        = link_to '編集', edit_user_registration_path, class:'btn btn-outline-dark'
+    .user-relation-box
+      .follower-box
+        120フォロワー
+      .following-box
+        11フォロー
+    .profile-introduction-box
+      = current_user.introduction
+  
