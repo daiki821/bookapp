@@ -29,4 +29,15 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
 
   validates :introduction,  length: { maximum: 100 }
+
+  has_one_attached :avatar
+
+
+  def avatar?
+    if avatar&.attached?
+      avatar
+    else
+      '/assets/default_avatar.png'
+    end
+  end
 end

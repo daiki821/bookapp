@@ -1,22 +1,25 @@
 // @import 'reset';
 @import '~bootstrap/scss/bootstrap';
+@import 'variables';
 @import 'header';
 @import 'footer';
 @import 'user_registration';
 @import 'profile';
 
 
+
+
 body{
-  // background-image: url();
-  // background-size: ;
+  // background-image: url('../../assets/images/backimage.jpg');
+  // background-size: cover;
   min-height: 100vh;
   position: relative;
   font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
  
+
   // footerをしたに配置するためのcss
   padding-bottom: 75px;
   box-sizing: border-box;
-  // background-color:#fffff0;
 
   a{
     color: #000;
@@ -25,7 +28,6 @@ body{
 .container{
   width: 80%;
   margin: 0 auto;
-  // background-color: #fff;
 }
 
 .message{
