@@ -32,6 +32,8 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
+  has_many :tasks, dependent: :destroy
+
 
   def avatar?
     if avatar&.attached?
