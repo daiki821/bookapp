@@ -1,0 +1,16 @@
+.form-box
+  = form_with(model: task, local: true) do |f|
+    .field
+      = f.label :image, '本の画像'
+      %br/
+      = f.file_field :image
+    .field
+      = f.label :title, 'タイトル'
+      %br/
+      = f.text_field :title
+    .field
+      = f.label :completed_at, 'いつまでに読む？'
+      %br/
+      = f.date_field :completed_at
+    .actions
+      = f.submit "保存", disable_with: '送信中...', class: 'btn btn-light my-btn'

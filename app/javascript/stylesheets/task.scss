@@ -13,6 +13,7 @@
 
 
 .list-box{
+  width: 100%;
   th{
     padding: 10px;
 
@@ -42,8 +43,26 @@
       width: 50%;
     }
 
+
+    .finish-box{
+      align-self: center;
+      font-size: 18px;
+      padding: 5px 10px;
+      color: #ffffff;
+      border-radius: 25px;
+      background-color: $main_color;
+      border: none;
+      cursor: pointer;
+    }
+
+    .edit-icon{
+      font-size: 30px;
+    }
+
   }
 
+  
+
 }
 
 
@@ -51,13 +70,3 @@
 
 
 
-.finish-box{
-  align-self: center;
-  font-size: 18px;
-  padding: 5px 10px;
-  color: #ffffff;
-  border-radius: 25px;
-  background-color: $main_color;
-  border: none;
-  cursor: pointer;
-}

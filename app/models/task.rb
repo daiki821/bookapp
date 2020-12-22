@@ -15,6 +15,8 @@
 #  index_tasks_on_user_id  (user_id)
 #
 class Task < ApplicationRecord
+  validates :title,        presence: true
+  validates :completed_at, presence: true
   has_one_attached :image
   belongs_to :user
 end
