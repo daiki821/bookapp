@@ -1,1 +1,24 @@
-home
+%h2.title BookTask
+.create-btn-box
+  = link_to 'create', new_task_path, class: 'btn btn-light my-btn mini create-btn'
+  %table.list-box
+    %tr.list-title
+      %th image
+      %th タイトル
+      %th 締め切り日
+    - @tasks.each do |task|
+      %tr.book-list
+        %td
+          = image_tag task.image ,class: 'list-image'
+        %td.book-title
+          = task.title
+        %td
+          = l task.completed_at, format: :long
+        %td
+          .finish-box done
+        %td
+          ・・・
+    
+    
+    
+    

@@ -1,0 +1,63 @@
+.title{
+  margin: 20px 0;
+}
+
+.create-btn-box{
+
+
+  .create-btn{
+    margin: 20px auto;
+    display: block;
+  }
+}
+
+
+.list-box{
+  th{
+    padding: 10px;
+
+  }
+  td{
+    padding: 10px;
+  }
+
+
+
+ 
+  .book-list{
+    border-top: 1px solid $main_color;
+
+    &:last-of-type{
+      border-bottom: 1px solid $main_color;
+    }
+
+
+    .list-image{
+      width: 100px;
+      height: 120px;
+
+    }
+
+    .book-title{
+      width: 50%;
+    }
+
+  }
+
+}
+
+
+
+
+
+
+.finish-box{
+  align-self: center;
+  font-size: 18px;
+  padding: 5px 10px;
+  color: #ffffff;
+  border-radius: 25px;
+  background-color: $main_color;
+  border: none;
+  cursor: pointer;
+}
