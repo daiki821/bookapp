@@ -4,7 +4,7 @@
 #
 #  id           :bigint           not null, primary key
 #  completed    :boolean          default(FALSE), not null
-#  completed_at :datetime         not null
+#  completed_at :date             not null
 #  title        :string           not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
