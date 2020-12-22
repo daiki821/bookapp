@@ -1,7 +1,7 @@
-.user-registration-box
+.form-outline-box
   %p.notice= notice
   %p.alert= alert
-  %h2.user-registration-title  ログイン
+  %h2.form-title  ログイン
   .form-box
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .field
@@ -13,5 +13,5 @@
         %br/
         = f.password_field :password, autocomplete: "new-password", type: 'password',class: 'text'  
       .actions
-        = f.submit "ログイン",class: 'btn btn-light registration-btn'
+        = f.submit "ログイン",class: 'btn btn-light my-btn'
   = link_to 'ユーザー登録はこちら', new_user_registration_path, class: 'registration-link'

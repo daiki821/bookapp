@@ -1,7 +1,7 @@
-.user-registration-box
+.form-outline-box
   %p.notice= notice
   %p.alert= alert
-  %h2.user-registration-title ユーザー編集
+  %h2.form-title ユーザー編集
   .form-box
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
       = render "devise/shared/error_messages", resource: resource
@@ -23,4 +23,4 @@
         %br/
         = f.text_area :introduction, class: 'text-area'
       .actions
-        = f.submit "保存", class: 'btn btn-light registration-btn'
+        = f.submit "保存", class: 'btn btn-light my-btn'
