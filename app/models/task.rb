@@ -19,4 +19,13 @@ class Task < ApplicationRecord
   validates :completed_at, presence: true
   has_one_attached :image
   belongs_to :user
+
+
+  def has_image?
+    if image&.attached?
+      image
+    else
+      '/assets/noimage.png'
+    end
+  end
 end

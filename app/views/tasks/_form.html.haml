@@ -12,5 +12,8 @@
       = f.label :completed_at, 'いつまでに読む？'
       %br/
       = f.date_field :completed_at
+    .field
+      = f.label :compleated, '読み終わった？'
+      = f.check_box :completed, {}, 'true', 'false'
     .actions
       = f.submit "保存", disable_with: '送信中...', class: 'btn btn-light my-btn'

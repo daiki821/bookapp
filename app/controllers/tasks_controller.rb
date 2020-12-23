@@ -46,6 +46,7 @@ class TasksController < ApplicationController
       :image,
       :title,
       :completed_at,
+      :completed,
     )
   end
 end
