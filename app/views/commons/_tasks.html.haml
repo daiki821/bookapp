@@ -16,9 +16,9 @@
       %td
         .edit-icon-box.dropdown
           %i.fas.fa-ellipsis-h.edit-icon
-        .dropdown-box
-          .d-menu
-            = link_to '編集', edit_task_path(id: task.id)
-          .d-menu
-            = link_to '削除', task_path(id: task.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？'}
+          .dropdown-box
+            .d-menu
+              = link_to '編集', edit_task_path(id: task.id)
+            .d-menu
+              = link_to '削除', task_path(id: task.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？'}
 

@@ -22,18 +22,16 @@ a{
   display: none;
 }
 
-.dropdown{
 
 
-  .dropdown-box{
-    border: 1px solid $main_color;
-    border-radius: 5px;
-    .d-menu{
-      padding: 5px 20px;
-  
-      &:first-of-type{
-        border-bottom: 1px solid $main_color;
-      }
+
+.dropdown-box{
+  border: 1px solid $main_color;
+  border-radius: 5px;
+  .d-menu{
+    padding: 5px 20px;
+    &:first-of-type{
+      border-bottom: 1px solid $main_color;
     }
   }
 }
