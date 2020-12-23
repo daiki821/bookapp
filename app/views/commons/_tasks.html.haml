@@ -1,0 +1,24 @@
+%table.list-box
+  %tr.list-title
+    %th image
+    %th タイトル
+    %th 締め切り日
+  - tasks.each do |task|
+    %tr.book-list
+      %td
+        = image_tag task.has_image? ,class: 'list-image'
+      %td.book-title
+        = task.title
+      %td
+        = l task.completed_at, format: :long
+      %td
+        .finish-box done
+      %td
+        .edit-icon-box.dropdown
+          %i.fas.fa-ellipsis-h.edit-icon
+        .dropdown-box
+          .d-menu
+            = link_to '編集', edit_task_path(id: task.id)
+          .d-menu
+            = link_to '削除', task_path(id: task.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？'}
+

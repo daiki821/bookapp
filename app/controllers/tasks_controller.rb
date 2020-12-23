@@ -1,7 +1,13 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  def index
-    @tasks = current_user.tasks.all
+
+  # まだ未完了のタスク一覧
+  def todo
+    @todo = current_user.tasks.where(completed: 'false')
+  end
+  # 完了したタスク一覧
+  def done
+    @done = current_user.tasks.where(completed: 'true')
   end
 
   def new
@@ -38,6 +44,8 @@ class TasksController < ApplicationController
     @task.destroy!
     redirect_to root_path, notice: '削除しました'
   end
+
+  
 
 
   private

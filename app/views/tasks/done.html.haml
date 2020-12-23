@@ -1,0 +1,4 @@
+%h2.title 完了したタスク
+.page-switch-box
+  = link_to '未完了', todo_tasks_path
+= render partial: 'commons/tasks', locals: {tasks: @done}
