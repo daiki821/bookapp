@@ -1,0 +1,76 @@
+.my-btn{
+  margin: 30px 0;
+  width: 250px;
+  border-radius: 50px;
+  background-color: $main_color;
+
+}
+
+.mini{
+  width: 150px;
+}
+
+img{
+  object-fit: cover;
+}
+
+a{
+  color: #000;
+}
+
+.hidden{
+  display: none;
+}
+
+
+
+
+.dropdown-box{
+  border: 1px solid $main_color;
+  border-radius: 5px;
+  .d-menu{
+    padding: 5px 20px;
+    &:first-of-type{
+      border-bottom: 1px solid $main_color;
+    }
+  }
+}
+
+
+
+// フォームーーーーー
+.form-outline-box{
+  width: 450px;
+  border: 1px solid #fff;
+  box-shadow: 10px 10px 15px -10px;
+  border-radius:10px;
+  margin: 75px auto 70px;
+  background-color: #fff;
+  
+
+  .form-title{
+    text-align: center;
+
+  }
+
+  .form-box{
+    width: 50%;
+    margin: 30px auto; 
+
+    .field{
+      margin-top: 20px;
+  
+  
+      .text{
+        width: 250px;
+      }
+      
+      .text-area{
+        width: 250px;
+        height: 100px;
+        resize: none;
+      }
+    }
+  }
+
+}
