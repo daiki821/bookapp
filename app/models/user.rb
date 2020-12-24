@@ -33,6 +33,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
 
   has_many :tasks, dependent: :destroy
+  has_many :outputs, dependent: :destroy
 
 
   def avatar?
