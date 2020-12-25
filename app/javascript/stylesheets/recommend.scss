@@ -1,0 +1,99 @@
+.recommend-global-box{
+  width: 75%;
+  display: flex;
+
+
+
+  // ----サイドメニュー -----
+  .side-menu-box{
+    background-color: green;
+    margin-right: 100px;
+    flex: 1;
+
+    .nav{
+
+      ul{
+        
+      }
+    }
+  }
+
+  // ----おすすめ投稿----
+  .recommend-card{
+    flex: 3;
+
+    .recommend-outline{
+      border: 1px solid #ffffff;
+      border-radius: 10px;
+      margin: 20px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,.2);
+    
+    
+    
+    
+      .user-info-box{
+        padding: 20px;
+        display: flex;
+        margin-bottom: 20px;
+        .recommend-user-icon-box{
+          .recommend-user-icon{
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-right: 20px;
+          }
+      
+        }
+    
+        .recommend-username{
+          align-self: center;
+        }
+    
+        .recommend-edit-box{
+          align-self: center;
+          margin-left: auto;
+        }
+      }
+    
+      .recommend-box{
+        display: flex;
+        padding: 0 20px;
+        .recommend-image{
+          width: 150px;
+          height: 200px;
+          margin-right: 30px;
+        }
+    
+    
+        .recommend-second-box{
+    
+          .recommend-title{
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 30px;
+           
+          }
+    
+        
+        }
+      }
+    
+      .function-box{
+        display: flex;
+        justify-content: flex-end;
+        border-top: 1px solid $main-color;
+        margin-top: 20px;
+        padding: 20px;
+    
+        .like-btn-box{
+          margin-right: 20px;
+         
+        }
+    
+    
+      }
+    }
+
+  }
+  
+}

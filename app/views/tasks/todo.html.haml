@@ -1,6 +1,7 @@
 %h2.title タスク一覧
 .page-switch-box
   =link_to '完了', done_tasks_path
+  = link_to 'おすすめ', recommends_path
 .create-btn-box
   = link_to 'create', new_task_path, class: 'btn btn-light my-btn mini create-btn'
 = paginate @todo
