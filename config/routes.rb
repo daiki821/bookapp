@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :tasks do
     resource :outputs, only: [:show, :edit, :update]
     collection do
-      get :todo, :done
+      get :done
     end
   end
   resources :completed_tasks, only: [:index, :show]
