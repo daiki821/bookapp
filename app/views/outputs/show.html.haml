@@ -1,0 +1,7 @@
+.output-box
+  = image_tag @output.task.image, class:'output-book-iamge'
+  .output-mini-box
+    %h2.output-book-title
+      = @output.task.title
+    .output-content
+      = simple_format(@output.content)

@@ -17,7 +17,11 @@
 class Task < ApplicationRecord
   validates :title,        presence: true
   validates :completed_at, presence: true
-  has_one_attached :image
+
+  has_one_attached :image 
+
+  has_one :output, dependent: :destroy
+
   belongs_to :user
 
 
@@ -28,4 +32,10 @@ class Task < ApplicationRecord
       '/assets/noimage.png'
     end
   end
+
+  def prepare_output(user)
+    output || build_output(user_id: user.id) 
+  end
+
+
 end

@@ -19,7 +19,7 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.build(task_params)
     if @task.save
-      redirect_to todo_tasks_path, notice: '保存できました'
+      redirect_to root_path, notice: '保存できました'
     else
       flash.now[:error] = '保存できませんでした'
       render :new
@@ -33,7 +33,7 @@ class TasksController < ApplicationController
   def update
     @task = current_user.tasks.find(params[:id])
     if @task.update(task_params)
-      redirect_to todo_tasks_path, notice: '更新できました'
+      redirect_to root_path, notice: '更新できました'
     else
       flash.now[:error] = '更新できませんでした'
       render :edit

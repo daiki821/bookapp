@@ -18,7 +18,8 @@
           %i.fas.fa-ellipsis-h.edit-icon
           .dropdown-box
             .d-menu
-              = link_to '編集', edit_task_path(id: task.id)
+              = link_to '編集', edit_task_path(id: task.id),class: "#{add_hidden_class(done_tasks_path)}"
+              = link_to 'アウトプット', task_outputs_path(task_id: task.id), class:"#{add_hidden_class(root_path)}"
             .d-menu
               = link_to '削除', task_path(id: task.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？'}
 
