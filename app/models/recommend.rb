@@ -14,4 +14,13 @@
 #  index_recommends_on_user_id  (user_id)
 #
 class Recommend < ApplicationRecord
+  validates :title,   presence: true
+  validates :content, presence: true
+  validates :content, length: { maximum: 200 }
+
+  belongs_to :user
+
+  has_one_attached :image
+
+ 
 end
