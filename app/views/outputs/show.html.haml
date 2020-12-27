@@ -1,5 +1,5 @@
 .output-box
-  = image_tag @output.task.image, class:'output-book-iamge'
+  = image_tag @output.task.has_image?, class:'output-book-iamge'
   .output-mini-box
     %h2.output-book-title
       = @output.task.title
