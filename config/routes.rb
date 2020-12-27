@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get :done
     end
   end
-  resources :completed_tasks, only: [:index, :show]
+  resources :recommends
+  
   resource :user
 end

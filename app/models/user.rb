@@ -34,6 +34,7 @@ class User < ApplicationRecord
 
   has_many :tasks, dependent: :destroy
   has_many :outputs, dependent: :destroy
+  has_many :recommends, dependent: :destroy
 
 
   def avatar?

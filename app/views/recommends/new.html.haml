@@ -1,0 +1,19 @@
+.form-outline-box
+  %h2.form-title おすすめへ投稿
+  = render partial: 'commons/error_messages', locals: {task: @recommend}
+  .form-box
+    = form_with(model: @recommend, url: recommends_path, method: 'post', local: true) do |f|
+      .field
+        = f.label :image, '本の画像'
+        %br/
+        = f.file_field :image
+      .field
+        = f.label :title, 'タイトル'
+        %br/
+        = f.text_field :title
+      .field
+        = f.label :content, "おすすめしたい内容"
+        %br/
+        = f.text_area :content, class: 'text-area'
+      .actions
+        = f.submit "保存", disable_with: '送信中...', class: 'btn btn-light my-btn'
