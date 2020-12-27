@@ -1,22 +1,27 @@
 .recommend-global-box
   .side-menu-box
     %nav
-      %ul
-        %li
-        %li いいねランキング
+      %ul.sidelist-ul
+        %li.sidelist
+          = search_form_for @search do |f|
+            .field
+              = f.search_field :title_cont, placeholder: '本のタイトルを入力', class: 'search-field'
+              = f.submit "検索", class: 'search-btn'
+        %li.sidelist いいねランキング
   .recommend-card
-    - @recommends.each do |recommend|
+    - @search_recommends.each do |recommend|
       .recommend-outline
         .user-info-box
           .recommend-user-icon-box
             = image_tag recommend.user.avatar?, class: 'recommend-user-icon'
           .recommend-username
             = recommend.user.username
-          .recommend-edit-box
-            %i.fas.fa-ellipsis-h.edit-icon 
-            .dropdown-box
-              .d-menu
-                = link_to '削除',recommend_path(id: recommend.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'}
+          - if current_user.recommends.exists?(id: recommend.id)
+            .recommend-edit-box
+              %i.fas.fa-ellipsis-h.edit-icon 
+              .dropdown-box
+                .d-menu
+                  = link_to '削除',recommend_path(id: recommend.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'}
         .recommend-box
           - if recommend.image.attached?
             = image_tag recommend.image,class: 'recommend-image'

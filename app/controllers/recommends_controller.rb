@@ -2,7 +2,8 @@ class RecommendsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @recommends = Recommend.all
+    @search = Recommend.ransack(params[:q])
+    @search_recommends = @search.result
   end
   
   def new

@@ -6,14 +6,18 @@
 
   // ----サイドメニュー -----
   .side-menu-box{
-    background-color: green;
     margin-right: 100px;
-    flex: 1;
+    margin-top: 40px;
 
-    .nav{
+    nav{
 
-      ul{
-        
+      .sidelist-ul{
+        list-style-type: none;
+        padding: 0;
+
+        .search-filed{
+          
+        }
       }
     }
   }
