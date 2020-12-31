@@ -32,7 +32,12 @@
               = recommend.content
         .function-box
           .like-btn-box
-            %i.fas.fa-heart.heart-icon
+            - if current_user.likes.exists?(recommend_id: recommend.id)
+              = link_to recommend_like_path(recommend_id: recommend.id), method: 'delete' do
+                %i.fas.fa-heart.heart-icon.active-heart
+            - else
+              = link_to recommend_like_path(recommend_id: recommend.id), method: 'post' do
+                %i.fas.fa-heart.heart-icon.heart
           .comment-btn-box
             %i.far.fa-comment.comment-icon
     .create-recommend-box
