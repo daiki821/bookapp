@@ -10,13 +10,13 @@
         %li.sidelist いいねランキング
   .recommend-card
     - @search_recommends.each do |recommend|
-      .recommend-outline
+      .recommend-outline{data: {recommend_id: recommend.id}}
         .user-info-box
           .recommend-user-icon-box
             = image_tag recommend.user.avatar?, class: 'recommend-user-icon'
           .recommend-username
             = recommend.user.username
-          - if current_user.recommends.exists?(id: recommend.id)
+          - if current_user.has_recommend?(recommend)
             .recommend-edit-box
               %i.fas.fa-ellipsis-h.edit-icon 
               .dropdown-box
@@ -32,15 +32,14 @@
               = recommend.content
         .function-box
           .like-btn-box
-            - if current_user.likes.exists?(recommend_id: recommend.id)
-              = link_to recommend_like_path(recommend_id: recommend.id), method: 'delete' do
-                %i.fas.fa-heart.heart-icon.active-heart
-            - else
-              = link_to recommend_like_path(recommend_id: recommend.id), method: 'post' do
-                %i.fas.fa-heart.heart-icon.heart
+            .active-heart
+              %i.fas.fa-heart.heart-icon
+            .heart
+              %i.fas.fa-heart.heart-icon
           .comment-btn-box
             %i.far.fa-comment.comment-icon
     .create-recommend-box
       = link_to new_recommend_path do
         %i.fas.fa-plus-circle.create-recommend-btn
 
+= javascript_pack_tag 'like'

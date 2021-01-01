@@ -1,18 +1,26 @@
 class LikesController < ApplicationController
   before_action :authenticate_user!
 
+  def show
+    recommend = Recommend.find(params[:recommend_id])
+    like_status = current_user.has_liked?(recommend)
+
+    render json: { hasLiked: like_status}
+  end
+
   def create
     recommend = Recommend.find(params[:recommend_id]) 
-    like = current_user.likes.build(recommend_id: recommend.id)
-    like.save!
-    redirect_to recommends_path
+    like = recommend.likes.create!(user_id: current_user.id)
+
+    render json: { status: 'ok' }
   end
 
   def destroy
     recommend = Recommend.find(params[:recommend_id])
-    like = current_user.likes.find_by(recommend_id: recommend.id)
+    like = recommend.likes.find_by(user_id: current_user.id)
     like.destroy!
-    redirect_to recommends_path
+
+    render json: { status: 'ok' }
   end
 
 

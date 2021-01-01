@@ -45,4 +45,12 @@ class User < ApplicationRecord
       '/assets/default_avatar.png'
     end
   end
+
+  def has_recommend?(recommend)
+    recommends.exists?(id: recommend.id)
+  end
+
+  def has_liked?(recommend)
+    likes.exists?(recommend_id: recommend.id)
+  end
 end

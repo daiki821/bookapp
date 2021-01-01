@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
   resources :recommends do
-    resource :like, only: [:create, :destroy]
+    resource :like, only: [:show, :create, :destroy]
   end
   
   resource :user
