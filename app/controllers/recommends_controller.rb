@@ -5,6 +5,10 @@ class RecommendsController < ApplicationController
     @search = Recommend.ransack(params[:q])
     @search_recommends = @search.result
   end
+
+  def show
+    @recommend = Recommend.find(params[:id])
+  end
   
   def new
     @recommend = current_user.recommends.build

@@ -1,0 +1,29 @@
+.recommend-outline{data: {recommend_id: recommend.id}}
+  .user-info-box
+    .recommend-user-icon-box
+      = image_tag recommend.user.avatar?, class: 'recommend-user-icon'
+    .recommend-username
+      = recommend.user.username
+    - if current_user.has_recommend?(recommend)
+      .recommend-edit-box
+        %i.fas.fa-ellipsis-h.edit-icon 
+        .dropdown-box
+          .d-menu
+            = link_to '削除',recommend_path(id: recommend.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'}
+  = link_to recommend_path(id: recommend.id) do
+    .recommend-box
+      - if recommend.image.attached?
+        = image_tag recommend.image,class: 'recommend-image'
+      .recommend-second-box
+        .recommend-title
+          = recommend.title
+        .recommend-content
+          = recommend.content
+  .function-box
+    .like-btn-box
+      .active-heart
+        %i.fas.fa-heart.heart-icon
+      .heart
+        %i.far.fa-heart.heart-icon
+    .comment-btn-box
+      %i.far.fa-comment.comment-icon
