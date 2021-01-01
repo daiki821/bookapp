@@ -7,6 +7,7 @@ environment.plugins.prepend(
     $: 'jquery',
     jQuery: 'jquery',
     Popper: 'popper.js'
+    
   })
 )
 

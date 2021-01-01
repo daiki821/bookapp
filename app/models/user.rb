@@ -35,6 +35,7 @@ class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
   has_many :outputs, dependent: :destroy
   has_many :recommends, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
 
   def avatar?
@@ -43,5 +44,13 @@ class User < ApplicationRecord
     else
       '/assets/default_avatar.png'
     end
+  end
+
+  def has_recommend?(recommend)
+    recommends.exists?(id: recommend.id)
+  end
+
+  def has_liked?(recommend)
+    likes.exists?(recommend_id: recommend.id)
   end
 end

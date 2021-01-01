@@ -11,7 +11,9 @@ Rails.application.routes.draw do
       get :done
     end
   end
-  resources :recommends
+  resources :recommends do
+    resource :like, only: [:show, :create, :destroy]
+  end
   
   resource :user
 end
