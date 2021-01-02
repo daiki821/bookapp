@@ -8,6 +8,7 @@ class RecommendsController < ApplicationController
 
   def show
     @recommend = Recommend.find(params[:id])
+    @comments = @recommend.comments
   end
   
   def new
