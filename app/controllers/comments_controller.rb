@@ -1,7 +1,10 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   def index
-  
+    recommend = Recommend.find(params[:recommend_id])
+    @comments = recommend.comments.all
+
+    render json: @comments
   end
 
   def new

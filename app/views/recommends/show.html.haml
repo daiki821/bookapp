@@ -28,20 +28,7 @@
             %i.far.fa-heart.heart-icon
         .comment-btn-box
           %i.far.fa-comment.comment-icon
-- @comments.each do |comment|
-  .comments-box
-    .comment-user-box
-      .comment-user-icon-box
-        = image_tag comment.user.avatar?, class: 'comment-user-icon'
-      .comment-username
-        = comment.user.username
-        .comment-edit-box
-          %i.fas.fa-ellipsis-h.edit-icon 
-          .dropdown-box
-            .d-menu
-              = link_to '削除',recommend_comment_path(recommend_id: @recommend.id, id: comment.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'}
-    .comment-conent-box
-      =comment.content
+.comment-box
 .comment-btn
   コメント追加
 .comment-form.hidden
@@ -49,3 +36,23 @@
   .add-comment-btn
     コメント追加
 = javascript_pack_tag 'like'
+= javascript_pack_tag 'comment'
+
+
+
+
+
+
+
+
+
+-# .comment-user-box
+-#   .comment-username
+-#     = comment.user.username
+-#     .comment-edit-box
+-#       %i.fas.fa-ellipsis-h.edit-icon 
+-#       .dropdown-box
+-#         .d-menu
+-#           = link_to '削除',recommend_comment_path(recommend_id: @recommend.id, id: comment.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'}
+-# .comment-conent-box
+-#   =comment.content
