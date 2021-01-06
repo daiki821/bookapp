@@ -37,8 +37,9 @@
               %i.fas.fa-heart.heart-icon
             .heart
               %i.far.fa-heart.heart-icon
-          .comment-btn-box
-            %i.far.fa-comment.comment-icon
+          = link_to recommend_path(id: recommend.id), data: {'turbolinks' => false} do
+            .comment-btn-box
+              %i.far.fa-comment.comment-icon
     .create-recommend-box
       = link_to new_recommend_path do
         %i.fas.fa-plus-circle.create-recommend-btn

@@ -1,7 +1,7 @@
 class CommentSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
 
-  attributes :content, :username, :avatar_url
+  attributes :id, :content, :username, :avatar_url
 
 
   def username

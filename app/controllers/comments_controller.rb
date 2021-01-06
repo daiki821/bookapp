@@ -15,19 +15,18 @@ class CommentsController < ApplicationController
   def create
     @recommend = Recommend.find(params[:recommend_id])
     @comment = @recommend.comments.build(comment_params.merge(user_id: current_user.id))
-    if @comment.save
-      redirect_to recommend_path(id: @recommend), notice: '保存しました'
-    else
-      flash.now[:error] = '保存に失敗しました'
-      render :new
-    end
+    @comment.save!
+    
+
+    render json: @comment
   end
 
   def destroy
     recommend = Recommend.find(params[:recommend_id])
     comment = recommend.comments.find(params[:id])
     comment.destroy!
-    redirect_to recommend_path(id: recommend.id)
+   
+    render json: {status: 'ok'}
   end
 
   private
