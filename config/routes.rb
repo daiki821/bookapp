@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   resources :recommends do
     resource :like, only: [:show, :create, :destroy]
+    resources :comments, only: [:index, :new, :create, :destroy]
   end
   
   resource :user

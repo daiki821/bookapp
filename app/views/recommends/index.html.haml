@@ -22,22 +22,24 @@
               .dropdown-box
                 .d-menu
                   = link_to '削除',recommend_path(id: recommend.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'}
-        .recommend-box
-          - if recommend.image.attached?
-            = image_tag recommend.image,class: 'recommend-image'
-          .recommend-second-box
-            .recommend-title
-              = recommend.title
-            .recommend-content
-              = recommend.content
+        = link_to recommend_path(id: recommend.id), data: {'turbolinks' => false} do
+          .recommend-box
+            - if recommend.image.attached?
+              = image_tag recommend.image,class: 'recommend-image'
+            .recommend-second-box
+              .recommend-title
+                = recommend.title
+              .recommend-content
+                = recommend.content
         .function-box
           .like-btn-box
             .active-heart
               %i.fas.fa-heart.heart-icon
             .heart
               %i.far.fa-heart.heart-icon
-          .comment-btn-box
-            %i.far.fa-comment.comment-icon
+          = link_to recommend_path(id: recommend.id), data: {'turbolinks' => false} do
+            .comment-btn-box
+              %i.far.fa-comment.comment-icon
     .create-recommend-box
       = link_to new_recommend_path do
         %i.fas.fa-plus-circle.create-recommend-btn
