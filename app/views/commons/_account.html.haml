@@ -1,0 +1,26 @@
+.profile-box
+  .profile-avatar-box
+    = image_tag user.avatar? , class: 'profile-avatar'
+  .profile-info-box
+    .profile-head-box
+      .profile-name-box
+        = user.username
+      .profile-btn-box
+        - if current_page?(user_path)
+          = link_to '編集', edit_user_registration_path, class:'btn btn-outline-dark'
+        - else
+          - if current_user.has_followed?(user)
+            = link_to 'フォロー解除', account_unfollows_path(account_id: user.id), method: :post, class:'btn btn-outline-dark'
+          - else 
+            = link_to 'フォロー', account_follows_path(account_id: user.id), method: :post, class:'btn btn-outline-dark'
+    .user-relation-box
+      .follower-box
+        %p
+          フォロワー
+          = user.follower_relationships.count
+      .following-box
+        %p
+          フォロー
+          = user.following_relationships.count
+    .profile-introduction-box
+      = user.introduction
