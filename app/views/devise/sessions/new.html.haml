@@ -14,4 +14,5 @@
         = f.password_field :password, autocomplete: "new-password", type: 'password',class: 'text'  
       .actions
         = f.submit "ログイン",class: 'btn btn-light my-btn'
+  = link_to 'ゲストユーザーとしてログイン(閲覧用)', users_guest_sign_in_path, data: {method: 'post'}, class: 'registration-link'
   = link_to 'ユーザー登録はこちら', new_user_registration_path, class: 'registration-link'
