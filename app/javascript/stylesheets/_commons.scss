@@ -16,7 +16,14 @@ img{
 
 a{
   color: #000;
+
+  &:hover{
+    color: #000;
+    text-decoration: none;
+  }
 }
+
+
 
 .hidden{
   display: none;
@@ -39,28 +46,39 @@ a{
 
 .create-recommend-btn{
   font-size: 80px;
-  position: absolute;
+  position: fixed;
   bottom: 100px;
   right: 150px;
   z-index: 1;
   color: grey;
 
   &:hover{
-    color: $main-color;
+    opacity: .8;
   }
 }
 
 
 
 .dropdown-box{
-  border: 1px solid $main_color;
-  border-radius: 5px;
-  .d-menu{
-    padding: 5px 20px;
-    &:first-of-type{
-      border-bottom: 1px solid $main_color;
+  position: relative;
+  .d-menu-box{
+    position: absolute;
+    left: 10px;
+    width: 70px;
+
+    .d-menu{
+      padding: 5px 10px;
+      border: 1px solid $main_color;
+      text-align: center;
+      background-color: #fff;
+  
+      &:not(:first-of-type){
+        border-top: none;
+      }
+      
     }
   }
+
 }
 
 

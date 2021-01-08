@@ -8,6 +8,13 @@
   .create-btn{
     margin: 20px auto;
     display: block;
+    padding: 5px 10px;
+    text-align: center;
+    
+
+    &:hover{
+      opacity: .8;
+    }
   }
 }
 
@@ -53,6 +60,11 @@
       background-color: $main_color;
       border: none;
       cursor: pointer;
+      text-align: center;
+
+      &:hover{
+        opacity: .8;
+      }
     }
  
 

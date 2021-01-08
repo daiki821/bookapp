@@ -7,7 +7,6 @@
             .field
               = f.search_field :title_cont, placeholder: '本のタイトルを入力', class: 'search-field'
               = f.submit "検索", class: 'search-btn'
-        %li.sidelist いいねランキング
   .recommend-card
     - @search_recommends.each do |recommend|
       .recommend-outline{data: {recommend_id: recommend.id}}
@@ -21,8 +20,9 @@
               .recommend-edit-box
                 %i.fas.fa-ellipsis-h.edit-icon 
                 .dropdown-box
-                  .d-menu
-                    = link_to '削除',recommend_path(id: recommend.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'}
+                  .d-menu-box
+                    .d-menu
+                      = link_to '削除',recommend_path(id: recommend.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'}
         = link_to recommend_path(id: recommend.id), data: {'turbolinks' => false} do
           .recommend-box
             - if recommend.image.attached?
@@ -46,3 +46,4 @@
         %i.fas.fa-plus-circle.create-recommend-btn
 
 = javascript_pack_tag 'like'
+= javascript_pack_tag 'dropdown'
