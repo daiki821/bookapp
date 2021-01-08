@@ -4,12 +4,12 @@ class TasksController < ApplicationController
   # まだ未完了のタスク一覧
   def todo
     todo = current_user.tasks.where(completed: 'false')
-    @todo = todo.page(params[:page]).per(6)
+    @todo = todo.page(params[:page]).per(4)
   end
   # 完了したタスク一覧
   def done
     done = current_user.tasks.where(completed: 'true')
-    @done = done.page(params[:page]).per(6)
+    @done = done.page(params[:page]).per(4)
   end
 
   def new
