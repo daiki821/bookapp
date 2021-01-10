@@ -12,10 +12,11 @@
       .recommend-outline{data: {recommend_id: recommend.id}}
         .user-info-box
           = link_to account_path(id: recommend.user.id) do
-            .recommend-user-icon-box
-              = image_tag recommend.user.avatar?, class: 'recommend-user-icon'
-            .recommend-username
-              = recommend.user.username
+            .recommend-user-box
+              .recommend-user-icon-box
+                = image_tag recommend.user.avatar?, class: 'recommend-user-icon'
+              .recommend-username
+                = recommend.user.username
           - if current_user.has_recommend?(recommend)
             .recommend-edit-box
               %i.fas.fa-ellipsis-h.edit-icon 

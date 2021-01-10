@@ -39,19 +39,23 @@
         padding: 20px;
         display: flex;
         margin-bottom: 20px;
-        .recommend-user-icon-box{
+        .recommend-user-box{
+          display: flex;
+          .recommend-user-icon-box{
           
-          .recommend-user-icon{
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            margin-right: 20px;
+            .recommend-user-icon{
+              width: 70px;
+              height: 70px;
+              border-radius: 50%;
+              margin-right: 20px;
+            }
+        
           }
       
-        }
-    
-        .recommend-username{
-          align-self: center;
+          .recommend-username{
+            align-self: center;
+          }
+
         }
     
         .recommend-edit-box{
