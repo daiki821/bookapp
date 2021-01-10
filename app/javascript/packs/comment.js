@@ -1,7 +1,6 @@
 import axios from 'modules/axios'
-
+import{ openDropdownMenu} from 'modules/dropdown_menu'
 import {
-  openDropdownMenu,
   addComment,
   commentForm
 } from 'modules/handle_comment'
@@ -10,16 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const recommendId = $('.recommend-outline').data().recommendId
   axios.get(`/recommends/${recommendId}/comments`)
     .then( (response) => {
-      const comment = response.data
-
-      $(comment).each( (i, element) => {
-        addComment(element)
+      const comments = response.data
+      comments.forEach( (comment) => {
+        addComment(comment)
       })
+      
 
       $('.comment-card').each((i,element) => {
-
-        openDropdownMenu(element)
-
+        $(element).find('.comment-edit-box').on('click', () => {
+          openDropdownMenu(element)
+        })
+        
         $(element).find('.d-menu').on('click', () => {
           const commentId = $(element).data().commentId 
           axios.delete(`/recommends/${recommendId}/comments/${commentId}`)
@@ -54,14 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
         comment: {content: content}
       })
         .then( (response) => {
-          const element = response.data
-          addComment(element)
-          $('.comment-text-area').val('')
+          const comment = response.data
+          addComment(comment)
 
           $('.comment-card').each((i,element) => {
-
-            openDropdownMenu(element)
-    
+            $(element).find('.comment-edit-box').off('click')
+            $(element).find('.comment-edit-box').on('click', () => {
+              openDropdownMenu(element)
+            })
+            
             $(element).find('.d-menu').on('click', () => {
               const commentId = $(element).data().commentId 
               axios.delete(`/recommends/${recommendId}/comments/${commentId}`)
@@ -91,7 +92,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-
-  
 
 })

@@ -8,11 +8,12 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "tasks#todo"
+  post '/tasks/:id/done' => 'tasks#done', as: 'done'
 
   resources :tasks do
     resource :outputs, only: [:show, :edit, :update]
     collection do
-      get :done
+      get :finish
     end
   end
   resources :recommends do

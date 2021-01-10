@@ -1,16 +1,14 @@
 %nav.navbar.navbar-expand-lg.navbar-light.nav-height
   .container
-    = link_to 'yomu', root_path, class:'text-white navbar-brand'
+    = link_to 'yomu', root_path, class:'text-white navbar-brand', data: {'turbolinks' => false}
     %button.text-white.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
       %span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
       %ul.navbar-nav.ml-auto
         %li.nav-item
-          = link_to 'HOME', root_path , class: 'nav-link text-white' 
+          = link_to 'タスク', root_path , class: 'nav-link text-white', data: {'turbolinks' => false}
         %li.nav-item
           = link_to 'おすすめ', recommends_path, class: 'nav-link text-white', data: {'turbolinks' => false}
-        %li.nav-item
-          = link_to 'ゲストユーザーとしてログイン(閲覧用)', users_guest_sign_in_path, data: {method: 'post'}, class: 'nav-link text-white' 
         %li.nav-item.dropdown
           %a#navbarDropdown.nav-link.dropdown-toggle.text-white{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
             - if current_user

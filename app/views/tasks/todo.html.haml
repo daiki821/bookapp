@@ -1,8 +1,9 @@
 %h2.title タスク一覧
 .page-switch-box
-  = link_to '完了', done_tasks_path
+  = link_to '完了', finish_tasks_path, data: {'turbolinks' => false}
   = link_to 'おすすめ', recommends_path, data: {'turbolinks' => false}
 .create-btn-box
-  = link_to 'create', new_task_path, class: 'btn btn-light my-btn mini create-btn'
+  = link_to '作成', new_task_path, class: 'my-btn mini create-btn'
 = paginate @todo
 = render partial: 'commons/tasks', locals: {tasks: @todo}
+= javascript_pack_tag 'dropdown'

@@ -1,6 +1,0 @@
-%h2.title 完了したタスク
-.page-switch-box
-  = link_to '未完了', root_path
-  = link_to 'おすすめ', recommends_path, data: {'turbolinks' => false}
-= paginate @done
-= render partial: 'commons/tasks', locals: {tasks: @done}

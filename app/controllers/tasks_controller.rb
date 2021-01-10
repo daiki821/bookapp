@@ -7,9 +7,15 @@ class TasksController < ApplicationController
     @todo = todo.page(params[:page]).per(4)
   end
   # 完了したタスク一覧
+  def finish
+    finish = current_user.tasks.where(completed: 'true')
+    @finish = finish.page(params[:page]).per(4)
+  end
+
   def done
-    done = current_user.tasks.where(completed: 'true')
-    @done = done.page(params[:page]).per(4)
+    task = current_user.tasks.find(params[:id])
+    @task = task.update(completed: 'true')
+    redirect_to root_path
   end
 
   def new
@@ -44,7 +50,12 @@ class TasksController < ApplicationController
   def destroy
     @task = current_user.tasks.find(params[:id])
     @task.destroy!
-    redirect_to root_path, notice: '削除しました'
+    if @task.completed == false
+      redirect_to root_path, notice: '削除しました'
+    else
+      redirect_to finish_tasks_path, notice: '削除しました'
+    end
+    
   end
 
   
