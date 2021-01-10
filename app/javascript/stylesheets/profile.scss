@@ -1,15 +1,17 @@
-.profile-box{
-  margin-top: 40px;
+.account-box{
+  margin: 40px auto 0;
   display: flex;
   border: 1px solid #ffffff;
   border-radius: 10px;
   padding: 40px;
   box-shadow: 0 4px 15px rgba(0,0,0,.2);
+  width: 70%;
+
 
   // 写真-------------
-  .profile-avatar-box{
+  .account-avatar-box{
 
-    .profile-avatar{
+    .account-avatar{
       width: 150px;
       height: 150px;
       border-radius: 50%;
@@ -17,14 +19,14 @@
     }
   }
 
-  .profile-info-box{
+  .account-info-box{
     margin-left: 30px;
 
-    .profile-head-box{
+    .account-head-box{
       display: flex;
 
       // ユーザーネーム------
-      .profile-name-box{
+      .account-name-box{
         font-size: 20px;
         font-weight: bold;
         margin-right: 40px;
@@ -43,20 +45,6 @@
         margin-right: 20px;
       }
     }
-
-
-    // 年齢と職業-----
-    .profile-foot-box{
-      display: flex;
-      font-size: 16px;
-      color: grey;
-      margin-top: 5px;
-      
-      .profile-birthday-box{
-        margin-right: 20px;
-      }
-    }
-
   }
 
   

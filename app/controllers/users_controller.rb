@@ -3,5 +3,6 @@ class UsersController < ApplicationController
   
   def show
     @user = current_user
+    @recommends = @user.recommends.all
   end
 end

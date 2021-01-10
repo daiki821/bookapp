@@ -41,22 +41,3 @@
 = javascript_pack_tag 'like'
 = javascript_pack_tag 'comment'
 = javascript_pack_tag 'dropdown'
-
-
-
-
-
-
-
-
-
--# .comment-user-box
--#   .comment-username
--#     = comment.user.username
--#     .comment-edit-box
--#       %i.fas.fa-ellipsis-h.edit-icon 
--#       .dropdown-box
--#         .d-menu
--#           = link_to '削除',recommend_comment_path(recommend_id: @recommend.id, id: comment.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'}
--# .comment-conent-box
--#   =comment.content
