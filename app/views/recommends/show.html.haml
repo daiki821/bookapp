@@ -1,19 +1,20 @@
 .recommend-global-box.recommend-show
   .recommend-card
     .recommend-outline{data: {recommend_id: @recommend.id}}
-      = link_to account_path(id: @recommend.user.id) do
-        .user-info-box
-          .recommend-user-icon-box
-            = image_tag @recommend.user.avatar?, class: 'recommend-user-icon'
-          .recommend-username
-            = @recommend.user.username
-          - if current_user.has_recommend?(@recommend)
-            .recommend-edit-box
-              %i.fas.fa-ellipsis-h.edit-icon 
-              .dropdown-box
-                .d-menu-box
-                  .d-menu
-                    = link_to '削除',recommend_path(id: @recommend.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'}
+      .user-info-box
+        = link_to account_path(id: @recommend.user.id) do
+          .recommend-user-box
+            .recommend-user-icon-box
+              = image_tag @recommend.user.avatar?, class: 'recommend-user-icon'
+            .recommend-username
+              = @recommend.user.username
+        - if current_user.has_recommend?(@recommend)
+          .recommend-edit-box
+            %i.fas.fa-ellipsis-h.edit-icon 
+            .dropdown-box.hidden
+              .d-menu-box
+                .d-menu
+                  = link_to '削除',recommend_path(id: @recommend.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'}
       .recommend-box
         - if @recommend.image.attached?
           = image_tag @recommend.image,class: 'recommend-image'
@@ -39,6 +40,7 @@
     コメント追加
 = javascript_pack_tag 'like'
 = javascript_pack_tag 'comment'
+= javascript_pack_tag 'dropdown'
 
 
 
