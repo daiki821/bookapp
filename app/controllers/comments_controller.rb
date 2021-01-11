@@ -7,11 +7,6 @@ class CommentsController < ApplicationController
     render json: @comments
   end
 
-  def new
-    @recommend = Recommend.find(params[:recommend_id])
-    @comment = @recommend.comments.build
-  end
-
   def create
     @recommend = Recommend.find(params[:recommend_id])
     @comment = @recommend.comments.build(comment_params.merge(user_id: current_user.id))
