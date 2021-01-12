@@ -26,14 +26,12 @@
     .like-btn-box
       .active-heart
         %i.fas.fa-heart.heart-icon
-        %span
-        = recommend.likes.count
       .heart
         %i.far.fa-heart.heart-icon
-        %span
+      .like-count
         = recommend.likes.count
     = link_to recommend_path(id: recommend.id), data: {'turbolinks' => false} do
       .comment-btn-box
         %i.far.fa-comment.comment-icon
-        %span
-        = recommend.comments.count
+        .comment-count
+          = recommend.comments.count

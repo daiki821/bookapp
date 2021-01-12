@@ -89,8 +89,21 @@
     
         .like-btn-box{
           margin-right: 20px;
+          display: flex;
           .active-heart{
             color: red;
+          }
+          .like-count{
+            margin-left: 5px;
+          }
+        }
+
+
+        .comment-btn-box{
+          display: flex;
+
+          .comment-count{
+            margin-left: 5px;
           }
         }
     
