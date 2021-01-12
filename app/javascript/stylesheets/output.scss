@@ -1,10 +1,11 @@
 .output-box{
   display: flex;
-  width: 80%;
-  margin: 60px auto;
+  width: 75%;
+  margin: 40px auto 60px;
   box-shadow: 0 4px 15px rgba(0,0,0,.2);
   padding: 40px;
   border-radius: 20px;
+  position: relative;
 
   .output-book-iamge{
     width: 200px;
@@ -20,6 +21,12 @@
     .output-content{
     }
 
+  }
+
+  .output-edit-box{
+    position: absolute;
+    top: 35px;
+    right: 40px;
   }
   
 

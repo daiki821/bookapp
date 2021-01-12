@@ -1,11 +1,11 @@
 class OutputsController < ApplicationController
   before_action :authenticate_user!
   def show
-    task = Task.find(params[:task_id])
-    if task.output
-      @output = task.output
+    @task = Task.find(params[:task_id])
+    if @task.output
+      @output = @task.output
     else
-      redirect_to edit_task_outputs_path(task_id: task.id)
+      redirect_to edit_task_outputs_path(task_id: @task.id)
     end
 
     

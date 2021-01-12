@@ -1,3 +1,9 @@
+%h2.title 学んだこと
+.page-switch-box
+  = link_to root_path, class: 'task-link-box', data: {'turbolinks' => false} do
+    %span
+      %i.far.fa-square
+      タスク一覧へ
 .output-box
   = image_tag @output.task.has_image?, class:'output-book-iamge'
   .output-mini-box
@@ -5,3 +11,10 @@
       = @output.task.title
     .output-content
       = simple_format(@output.content)
+  .output-edit-box
+    %i.fas.fa-ellipsis-h.edit-icon 
+    .dropdown-box.hidden
+      .d-menu-box
+        .d-menu
+          = link_to '編集', edit_task_outputs_path(task_id: @task.id)
+= javascript_pack_tag 'dropdown'
