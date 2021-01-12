@@ -1,6 +1,6 @@
 .form-outline-box
   %h2.form-title おすすめへ投稿
-  = render partial: 'commons/error_messages', locals: {task: @recommend}
+  = render partial: 'commons/error_messages', locals: {model: @recommend}
   .form-box
     = form_with(model: @recommend, url: recommends_path, method: 'post', local: true) do |f|
       .field
@@ -17,3 +17,4 @@
         = f.text_area :content, class: 'text-area'
       .actions
         = f.submit "保存", disable_with: '送信中...', class: 'btn btn-light my-btn'
+= javascript_pack_tag 'form'

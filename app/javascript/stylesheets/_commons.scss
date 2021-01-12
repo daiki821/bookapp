@@ -81,6 +81,19 @@ a{
 
 }
 
+// エラーメッセージ
+.message-ul{
+  list-style: none;
+  padding: 0px;
+  .message-li{
+    display: flex;
+    background-color:$error_color;
+    padding: 0 10px;
+    .clear-icon-box{
+      margin-left: auto;
+    }
+  }
+}
 
 
 // フォームーーーーー

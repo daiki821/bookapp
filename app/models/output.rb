@@ -15,7 +15,8 @@
 #  index_outputs_on_user_id  (user_id)
 #
 class Output < ApplicationRecord
-
+  validates :content, presence: true
+  
   belongs_to :user
   belongs_to :task
   

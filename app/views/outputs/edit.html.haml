@@ -1,9 +1,6 @@
 .form-outline-box
-  %ul
-  - @output.errors.full_messages.each do |message|
-    %li
-      = message
   %h2.form-title outputの追加
+  = render partial: 'commons/error_messages', locals: {model: @output}
   .form-box
     = form_with(model: @output, url: task_outputs_path(task_id: @task.id), method: 'put', local: true) do |f|
       .field
@@ -12,3 +9,4 @@
         = f.text_area :content, class: 'text-area'
       .actions
         = f.submit "保存", disable_with: '送信中...', class: 'btn btn-light my-btn'
+= javascript_pack_tag 'form'

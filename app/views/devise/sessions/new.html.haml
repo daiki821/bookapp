@@ -1,7 +1,11 @@
 .form-outline-box
-  %p.notice= notice
-  %p.alert= alert
   %h2.form-title  ログイン
+  - if alert
+    %ul.message-ul
+      %li.message-li
+        = alert
+        .clear-icon-box.hidden
+          %i.fas.fa-times
   .form-box
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .field
@@ -16,3 +20,4 @@
         = f.submit "ログイン",class: 'btn btn-light my-btn'
   = link_to 'ゲストユーザーとしてログイン(閲覧用)', users_guest_sign_in_path, data: {method: 'post'}, class: 'registration-link'
   = link_to 'ユーザー登録はこちら', new_user_registration_path, class: 'registration-link'
+= javascript_pack_tag 'form'

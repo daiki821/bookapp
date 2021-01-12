@@ -1,13 +1,10 @@
 .recommend-global-box{
   width: 80%;
   display: flex;
-
-
-
+  margin-top: 30px;
   // ----サイドメニュー -----
   .side-menu-box{
     margin-right: 90px;
-    margin-top: 40px;
 
     nav{
 
@@ -25,7 +22,6 @@
   // ----おすすめ投稿----
   .recommend-card{
     flex: 3;
-
     .recommend-outline{
       border: 1px solid #ffffff;
       border-radius: 10px;
@@ -112,5 +108,5 @@
 
 .recommend-show{
   width: 70%;
-  margin: 0 auto;
+  margin: 40px auto;
 }
