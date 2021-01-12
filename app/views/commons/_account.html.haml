@@ -1,12 +1,12 @@
-.profile-box
-  .profile-avatar-box
-    = image_tag user.avatar? , class: 'profile-avatar'
-  .profile-info-box
-    .profile-head-box
-      .profile-name-box
+.account-box
+  .account-avatar-box
+    = image_tag user.avatar? , class: 'account-avatar'
+  .account-info-box
+    .account-head-box
+      .account-name-box
         = user.username
-      .profile-btn-box
-        - if current_page?(user_path)
+      .account-btn-box
+        - if %w[user user_favorite_index].any?{ |name| current_page?(send("#{name}_path"))}
           = link_to '編集', edit_user_registration_path, class:'btn btn-outline-dark'
         - else
           - if current_user.has_followed?(user)
@@ -22,5 +22,5 @@
         %p
           フォロー
           = user.following_relationships.count
-    .profile-introduction-box
+    .account-introduction-box
       = user.introduction

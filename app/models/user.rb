@@ -42,6 +42,7 @@ class User < ApplicationRecord
 
   has_many :followings, through: :following_relationships, source: :following
   has_many :followers, through: :follower_relationships, source: :follower
+  has_many :favorite_recommends, through: :likes, source: :recommend
 
   def follow!(user)
     following_relationships.create!(following_id: user.id)

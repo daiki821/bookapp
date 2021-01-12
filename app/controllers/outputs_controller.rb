@@ -24,7 +24,7 @@ class OutputsController < ApplicationController
       redirect_to task_outputs_path, notice: '保存できました'
     else
       flash.now[:error] = '保存できませんでした'
-      render :new
+      render :edit
     end
   end
 

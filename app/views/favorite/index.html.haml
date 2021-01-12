@@ -1,0 +1,20 @@
+= render partial: 'commons/account', locals: { user: @user}
+.tab-box
+  .tab
+    %ul.tab-ul
+      - if current_page?(user_favorite_index_path)
+        %li
+          = link_to '投稿', user_path, data: {'turbolinks' => false}
+        %li#active-tab
+          = link_to 'いいね', user_favorite_index_path, data: {'turbolinks' => false}
+      - else
+        %li
+          = link_to '投稿', account_path(id: @user.id), data: {'turbolinks' => false}
+        %li#active-tab
+          = link_to 'いいね', account_favorite_index_path(account_id: @user.id), data: {'turbolinks' => false}
+.recommend-global-box.recommend-show
+  .recommend-card
+    - @favorites.each do |recommend|
+      = render partial: 'commons/recommends', locals: { recommend: recommend }
+= javascript_pack_tag 'like'
+= javascript_pack_tag 'dropdown'

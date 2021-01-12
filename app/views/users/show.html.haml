@@ -1,2 +1,14 @@
 = render partial: 'commons/account', locals: { user: current_user }
-  
+.tab-box
+  .tab
+    %ul.tab-ul
+      %li#active-tab
+        = link_to '投稿', user_path, data: {'turbolinks' => false}
+      %li
+        = link_to 'いいね', user_favorite_index_path, data: {'turbolinks' => false}
+.recommend-global-box.recommend-show
+  .recommend-card
+    - @recommends.each do |recommend|
+      = render partial: 'commons/recommends', locals: { recommend: recommend }
+= javascript_pack_tag 'like'
+= javascript_pack_tag 'dropdown'
