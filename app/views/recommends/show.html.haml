@@ -27,10 +27,16 @@
         .like-btn-box
           .active-heart
             %i.fas.fa-heart.heart-icon
+            %span
+            = @recommend.likes.count
           .heart
             %i.far.fa-heart.heart-icon
+            %span
+            = @recommend.likes.count
         .comment-btn-box
           %i.far.fa-comment.comment-icon
+          %span
+          = @recommend.comments.count
 .comment-box
 .comment-btn
   コメント追加
