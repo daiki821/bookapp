@@ -13,8 +13,14 @@
         = l task.completed_at, format: :long
       %td
         .finish-box
-          = link_to '完了', done_path(id: task.id), data: { method: 'post'}, class: "#{add_hidden_class(finish_tasks_path)}"
-          = link_to '学び', task_outputs_path(task_id: task.id), class:"#{add_hidden_class(root_path)}", data: {'turbolinks' => false}
+          = link_to done_path(id: task.id), data: { method: 'post'}, class: "#{add_hidden_class(finish_tasks_path)}" do
+            %i.far.fa-check-square
+            %span
+            完了
+          = link_to task_outputs_path(task_id: task.id), class:"#{add_hidden_class(root_path)}", data: {'turbolinks' => false} do
+            %i.fas.fa-pencil-alt
+            %span
+            学び
       %td
         .edit-icon-box.dropdown
           %i.fas.fa-ellipsis-h.edit-icon

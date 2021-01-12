@@ -6,12 +6,20 @@
     #navbarSupportedContent.collapse.navbar-collapse
       %ul.navbar-nav.ml-auto
         %li.nav-item
-          = link_to 'タスク', root_path , class: 'nav-link text-white', data: {'turbolinks' => false}
+          = link_to root_path , class: 'nav-link text-white', data: {'turbolinks' => false} do
+            %i.fas.fa-list
+            %span
+            タスク
         %li.nav-item
-          = link_to 'おすすめ', recommends_path, class: 'nav-link text-white', data: {'turbolinks' => false}
+          = link_to recommends_path, class: 'nav-link text-white', data: {'turbolinks' => false} do
+            %i.far.fa-comment-alt
+            %span
+            おすすめ
         %li.nav-item.dropdown
           %a#navbarDropdown.nav-link.dropdown-toggle.text-white{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
             - if current_user
+              %i.fas.fa-user
+              %span
               = current_user.username
             -else
               ログインしてください

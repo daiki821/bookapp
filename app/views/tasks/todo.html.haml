@@ -1,6 +1,9 @@
 %h2.title タスク一覧
 .create-btn-box
-  = link_to '作成', new_task_path, class: 'my-btn mini create-btn'
+  = link_to new_task_path, class: 'my-btn mini create-btn' do
+    %i.fas.fa-plus
+    %span
+    作成
 .page-switch-box
   = link_to root_path, class: 'task-link-box', data: {'turbolinks' => false} do
     %span
