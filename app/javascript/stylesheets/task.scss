@@ -1,5 +1,25 @@
 .title{
   margin: 20px 0;
+  text-align: center;
+  font-weight: bold;
+}
+.page-switch-box{
+  display: flex;
+  .task-link-box{
+    border: 0px solid #fff;
+    background-color: $main_color;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px 0;
+  }
+
+  .click-link{
+    opacity: 0.6;
+
+    &:hover{
+      opacity: 1;
+    }
+  }
 }
 
 .create-btn-box{

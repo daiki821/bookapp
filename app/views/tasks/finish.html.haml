@@ -1,7 +1,13 @@
 %h2.title 完了したタスク
 .page-switch-box
-  = link_to '未完了', root_path, data: {'turbolinks' => false}
-  = link_to 'おすすめ', recommends_path, data: {'turbolinks' => false}
+  = link_to root_path, class: 'task-link-box click-link', data: {'turbolinks' => false} do
+    %span
+      %i.far.fa-square
+      未完了
+  = link_to finish_tasks_path, class: 'task-link-box ', data: {'turbolinks' => false} do
+    %span
+      %i.far.fa-check-square
+      完了
 = paginate @finish
 = render partial: 'commons/tasks', locals: {tasks: @finish}
 = javascript_pack_tag 'dropdown'

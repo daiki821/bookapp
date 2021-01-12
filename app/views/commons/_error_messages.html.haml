@@ -1,4 +1,7 @@
-%ul
-  - task.errors.full_messages.each do |message|
-    %li
+%ul.message-ul
+  - model.errors.full_messages.each do |message|
+    %li.message-li
       = message
+      .clear-icon-box.hidden
+        %i.fas.fa-times
+

@@ -16,5 +16,11 @@ document.addEventListener( 'DOMContentLoaded', () => {
     })
   })
 
+  $('.output-box').each( (i, element) => {
+    $(element).find('.output-edit-box').on( 'click', () => {
+      openDropdownMenu(element)
+    })
+  })
+
 })
 

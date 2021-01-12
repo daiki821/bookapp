@@ -1,5 +1,5 @@
 .form-outline-box
   %h2.form-title taskの編集
-  = render partial: 'commons/error_messages', locals: {task: @task}
+  = render partial: 'commons/error_messages', locals: {model: @task}
   = render partial: 'form', locals: {task: @task}
-      
+= javascript_pack_tag 'form'
