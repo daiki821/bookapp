@@ -1,9 +1,15 @@
 %h2.title タスク一覧
-.page-switch-box
-  = link_to '完了', finish_tasks_path, data: {'turbolinks' => false}
-  = link_to 'おすすめ', recommends_path, data: {'turbolinks' => false}
 .create-btn-box
   = link_to '作成', new_task_path, class: 'my-btn mini create-btn'
+.page-switch-box
+  = link_to root_path, class: 'task-link-box', data: {'turbolinks' => false} do
+    %span
+      %i.far.fa-square
+      未完了
+  = link_to finish_tasks_path, class: 'task-link-box click-link', data: {'turbolinks' => false} do
+    %span
+      %i.far.fa-check-square
+      完了
 = paginate @todo
 = render partial: 'commons/tasks', locals: {tasks: @todo}
 = javascript_pack_tag 'dropdown'
