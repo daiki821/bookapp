@@ -1,11 +1,9 @@
 .form-outline-box
-  %h2.form-title outputの追加
+  %h2.form-title 本から学んだこと
   = render partial: 'commons/error_messages', locals: {model: @output}
   .form-box
     = form_with(model: @output, url: task_outputs_path(task_id: @task.id), method: 'put', local: true) do |f|
       .field
-        = f.label :content, '何を学んだ？'
-        %br/
         = f.text_area :content, class: 'text-area'
       .actions
         = f.submit "保存", disable_with: '送信中...', class: 'btn btn-light my-btn'
