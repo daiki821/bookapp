@@ -8,9 +8,11 @@
     = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .message
-      .notice= notice
-      .alert= alert
+    - if flash.present?
+      .flash-box
+        - flash.each do |key, value|
+          %div{:class => key}
+            = value
     = render 'commons/header'
     .container
       = yield
