@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const recommendId = $('.recommend-outline').data().recommendId
   axios.get(`/recommends/${recommendId}/comments`)
     .then( (response) => {
-      const comments = response.data
+      const comments = response.data.data
       comments.forEach( (comment) => {
         addComment(comment)
       })
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
               const status = res.data.status
               if(status == 'ok'){
                 $(element).remove()
+                $('.comment-count').text(res.data.commentCount)
               }
             })
 
@@ -54,8 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
         comment: {content: content}
       })
         .then( (response) => {
-          const comment = response.data
+          const comment = response.data.data
           addComment(comment)
+          $('.comment-count').text(response.data.meta)
+
 
           $('.comment-card').each((i,element) => {
             $(element).find('.comment-edit-box').off('click')
@@ -70,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   const status = res.data.status
                   if(status == 'ok'){
                     $(element).remove()
+                    $('.comment-count').text(res.data.commentCount)
                   }
                 })
     
