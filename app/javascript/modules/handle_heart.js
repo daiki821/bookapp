@@ -7,6 +7,8 @@ const clickHeart = (element, recommendId) => {
         if (response.data.status == 'ok'){
           $(element).find('.heart').addClass('hidden')
           $(element).find('.active-heart').removeClass('hidden')
+          
+          $(element).find('.like-count').text(response.data.likeCount)
         }
       })
   
@@ -24,6 +26,8 @@ const clickActiveHeart = (element, recommendId) => {
         if(response.data.status == 'ok'){
           $(element).find('.active-heart').addClass('hidden')
           $(element).find('.heart').removeClass('hidden')
+
+          $(element).find('.like-count').text(response.data.likeCount)
         }
       })
       .catch( (e) => {

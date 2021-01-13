@@ -28,6 +28,10 @@
         %i.fas.fa-heart.heart-icon
       .heart
         %i.far.fa-heart.heart-icon
+      .like-count
+        = recommend.likes.count
     = link_to recommend_path(id: recommend.id), data: {'turbolinks' => false} do
       .comment-btn-box
         %i.far.fa-comment.comment-icon
+        .comment-count
+          = recommend.comments.count

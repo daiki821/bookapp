@@ -29,8 +29,12 @@
             %i.fas.fa-heart.heart-icon
           .heart
             %i.far.fa-heart.heart-icon
+          .like-count
+            = @recommend.likes.count
         .comment-btn-box
           %i.far.fa-comment.comment-icon
+          .comment-count
+            = @recommend.comments.count
 .comment-box
 .comment-btn
   コメント追加
