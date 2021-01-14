@@ -16,13 +16,18 @@
 #
 class Task < ApplicationRecord
   validates :title,        presence: true
-  validates :completed_at, presence: true
-
+  validates :completed_at, presence: true, if: :past_date
+  
   has_one_attached :image 
 
   has_one :output, dependent: :destroy
 
   belongs_to :user
+
+
+  def past_date
+    errors.add(:completed_at, ': 過去の日付は登録できません') if completed_at < Date.current
+  end
 
 
   def has_image?
