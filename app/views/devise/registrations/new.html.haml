@@ -17,6 +17,5 @@
         = f.password_field :password_confirmation, autocomplete: "new-password",type: 'password',value: '',placeholder: "もう一度入力",class: 'text'
       .actions
         = f.submit "登録",class: 'btn btn-light my-btn'
-  = link_to 'ゲストユーザーとしてログイン(閲覧用)', users_guest_sign_in_path, data: {method: 'post'}, class: 'registration-link'
   = link_to 'ログインはこちら', new_user_session_path, class: 'registration-link'
 = javascript_pack_tag 'form'

@@ -1,8 +1,13 @@
 .footer-box{
-  background-color: $main_color;
   position: absolute;
   width: 100%;
   bottom: 0;
   text-align: center;
   padding: 15px 0;
+  background-color: $main_color;
+  .footer-font{
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+  }
 }

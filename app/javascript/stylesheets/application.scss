@@ -5,7 +5,6 @@
 @import 'commons';
 @import 'header';
 @import 'footer';
-@import 'user_registration';
 @import 'account';
 @import 'task';
 @import 'output';
@@ -20,6 +19,7 @@ body{
   position: relative;
   font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 
+  
 
 
 
@@ -27,7 +27,6 @@ body{
   // footerをしたに配置するためのcss
   padding-bottom: 75px;
   box-sizing: border-box;
-
  
 }
 .container{
@@ -40,11 +39,14 @@ body{
   position: absolute;
   padding:10px 30px;
   box-shadow: 0 4px 15px rgba(104, 51, 51, 0.2);
-  left: 40%;
-  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   z-index: 1;
   font-size: 18px;
-  background-color: #fff;
+  background-color: #F46F52;
+  color: #fff;
   animation: fadeIn 4s ease-in-out;
   opacity: 0;
 }

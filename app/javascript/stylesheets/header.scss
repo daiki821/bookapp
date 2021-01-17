@@ -1,6 +1,33 @@
 .nav-height{
   height: 100px;
-  background-color: $main_color;
- 
+  margin-bottom: 80px;
+  background-color: #F4F8FA;
+}
+
+.header-font{
+  color: $main_color;
+  &:hover{
+    color: $main_color;
+    opacity: .7;
+  }
+}
+
+
+.dropdown-menu{
+  .dropdown-item{
+    color: $main_color;
+    &:hover{
+      background-color: #fff;
+      opacity: .8;
+    }
+  }
+}
+
+
+.app-name{
+  font-weight: 900;
+  font-size: 27px;
   
 }
+
+
