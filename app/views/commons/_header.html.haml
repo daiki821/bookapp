@@ -1,6 +1,9 @@
 %nav.navbar.navbar-expand-lg.nav-height
   .container
-    = link_to 'ブックたす', root_path, class:'navbar-brand header-font app-name', data: {'turbolinks' => false}
+    = link_to root_path, class:'navbar-brand header-font app-name', data: {'turbolinks' => false} do
+      %i.fas.fa-book-reader
+      %span
+      ブックたす
     #navbarSupportedContent.collapse.navbar-collapse
       %ul.navbar-nav.ml-auto
         %li.nav-item
