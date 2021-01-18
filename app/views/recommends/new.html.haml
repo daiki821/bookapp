@@ -1,5 +1,5 @@
 .form-outline-box
-  %h2.form-title おすすめへ投稿
+  %h2.form-title おすすめの本を投稿
   = render partial: 'commons/error_messages', locals: {model: @recommend}
   .form-box
     = form_with(model: @recommend, url: recommends_path, method: 'post', local: true) do |f|
