@@ -1,9 +1,4 @@
-%h2.title タスク一覧
-.create-btn-box
-  = link_to new_task_path, class: 'my-btn mini create-btn' do
-    %i.fas.fa-plus
-    %span
-    作成
+%h2.title ブックリスト
 .page-switch-box
   = link_to root_path, class: 'task-link-box', data: {'turbolinks' => false} do
     %span
@@ -13,6 +8,11 @@
     %span
       %i.far.fa-check-square
       完了
+.create-btn-box
+  = link_to new_task_path, class: 'my-btn mini create-btn' do
+    %i.fas.fa-plus
+    %span
+    作成
 = paginate @todo
 = render partial: 'commons/tasks', locals: {tasks: @todo}
 = javascript_pack_tag 'dropdown'

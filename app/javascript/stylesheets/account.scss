@@ -5,6 +5,31 @@
   padding: 40px;
   width: 70%;
 
+  .follow-btn{
+    border: 1px solid $main_color;
+    color:  $main_color;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    &:hover{
+      background-color: $main_color;
+      color: #fff;
+    }
+  }
+
+  .unfollow-btn{
+    background-color: $main_color;
+    border: 1px solid $main_color;
+    color:  #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    &:hover{
+      background-color: #fff;
+      color: $main_color;
+    }
+  }
+
 
   // 写真-------------
   .account-avatar-box{

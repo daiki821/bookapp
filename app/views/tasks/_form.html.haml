@@ -7,8 +7,8 @@
       = f.label :title, 'タイトル'
       = f.text_field :title
     .field
-      = f.label :completed_at, 'いつまでに読む？'
-      = f.date_field :completed_at
+      = f.label :completed_at, '締め切り日'
+      = f.date_field :completed_at, min: Date.current
     .field
       = f.label :compleated, '読み終わった？'
       = f.check_box :completed, {}, 'true', 'false'
