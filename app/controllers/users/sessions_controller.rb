@@ -10,7 +10,7 @@ class Users::SessionsController < Devise::SessionsController
       user.username = 'ゲストユーザー'
     end
     sign_in user
-    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました'
+    redirect_to todo_tasks_path, notice: 'ゲストユーザーとしてログインしました'
   end
 
   # GET /resource/sign_in

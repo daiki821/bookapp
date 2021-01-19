@@ -14,7 +14,10 @@
           %div{:class => key}
             = value
     = render 'commons/header'
-    .container
+    - if current_user.present?
+      .container
+        = yield
+    - else
       = yield
     = render 'commons/footer'
     

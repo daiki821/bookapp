@@ -17,7 +17,7 @@
             %i.far.fa-check-square
             %span
             完了
-        = link_to task_outputs_path(task_id: task.id), class:"#{add_hidden_class(root_path)} task-finish-btn", data: {'turbolinks' => false} do
+        = link_to task_outputs_path(task_id: task.id), class:"#{add_hidden_class(todo_tasks_path)} task-finish-btn", data: {'turbolinks' => false} do
           .finish-box
             %i.fas.fa-pencil-alt
             %span
