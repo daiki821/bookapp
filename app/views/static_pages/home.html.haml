@@ -1,0 +1,41 @@
+.first-box
+  .first-wrap
+    %h1.top-page-title
+      %i.fas.fa-book-reader
+      %span
+      ブックたす
+    %p.top-page-text 本専用のタスクリスト
+    = link_to new_user_session_path , class: 'top-page-login', data: {'turbolinks' => false} do
+      %i.fas.fa-sign-in-alt
+      %span
+      ログイン
+    = link_to users_guest_sign_in_path, class: 'top-page-guest', data: {method: 'post', 'turbolinks' => false} do
+      %i.fas.fa-user-check
+      %span
+      ゲストログイン
+  = image_tag '/assets/book.png', class: 'top-image'
+.second-box
+  .app-info-box
+    %h2.content-title リスト機能
+    .content-image-box
+      = image_tag '/assets/sample.png', class: 'sample-image'
+    %p.content-p
+      自分が読みたい本を締め切り日を決めてリスト化していきます
+  .app-info-box
+    %h2.content-title おすすめ機能
+    .content-image-box
+      = image_tag '/assets/sample2.png', class: 'sample-image'
+    %p.content-p
+      他のユーザーにおすすめしたい本を共有することができます
+  .app-info-box
+    %h2.content-title アウトプット機能
+    .content-image-box
+      = image_tag '/assets/sample3.png', class: 'sample-image'
+    %p.content-p
+      読んだ本から学んだことをアウトプットすることができます
+.third-box
+  %h2.third-title さあ、はじめよう！
+  = link_to new_user_session_path , class: 'start-btn', data: {'turbolinks' => false} do
+    %i.fas.fa-sign-in-alt
+    %span
+    ログイン
