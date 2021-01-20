@@ -160,3 +160,35 @@ a{
   }
 
 }
+
+
+// ページネーション
+.pagination{
+
+  .page-item{
+
+    .page-link{
+      border: 1px solid $main_color;
+      border-radius: 0.25rem;
+      color: $main_color;
+
+      &:hover{
+        background-color: $main_color;
+        color: #fff;
+      }
+    }
+  }
+
+  .active{
+
+    .page-link{
+      color:#fff;
+      background-color: $main_color;
+    }
+  }
+
+}
+
+
+
+
