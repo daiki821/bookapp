@@ -3,7 +3,7 @@ class RecommendsController < ApplicationController
 
   def index
     @search = Recommend.ransack(params[:q])
-    @search_recommends = @search.result
+    @search_recommends = @search.result.page(params[:page]).per(4).order(created_at: :desc)
   end
 
   def show

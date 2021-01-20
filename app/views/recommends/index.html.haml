@@ -13,6 +13,6 @@
     .create-recommend-box
       = link_to new_recommend_path do
         %i.fas.fa-plus-circle.create-recommend-btn
-
+    = paginate @search_recommends
 = javascript_pack_tag 'like'
 = javascript_pack_tag 'dropdown'
