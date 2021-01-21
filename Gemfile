@@ -1,3 +1,4 @@
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -34,6 +35,7 @@ gem 'font-awesome-sass'
 gem 'kaminari'
 gem 'ransack'
 gem 'active_model_serializers'
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
