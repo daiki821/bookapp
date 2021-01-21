@@ -58,17 +58,14 @@
 }
 .second-box{
   margin: 70px auto;
-  width: 90%;
+  width: 95%;
   display: flex;
   color: $main_color;
-  justify-content: space-between;
+  justify-content: space-around;
   .app-info-box{
     background-color: #F4F8FA;
     padding: 30px;
 
-    &:nth-of-type(2){
-      margin: 0 30px;
-    }
 
     .content-title{
       text-align: center;
