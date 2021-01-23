@@ -46,6 +46,19 @@ RSpec.describe User, type: :model do
     end
   end
 
+  context "パスワードが6文字以上だった場合" do
+    let!(:user) { build(:user, password: 'aaaaaa') }
+    
+    before do
+      user.save
+    end
+
+    it '保存できる' do
+      expect(user).to be_valid
+    end
+  end
+  
+
   context 'パスワードが６文字以下だった場合' do
     let!(:user) { build(:user, password: 'aaaaa') }
 
