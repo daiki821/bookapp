@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  context "ユーザー名とEメールとパスワードが入力されている場合" do
+  context 'ユーザー名とEメールとパスワードが入力されている場合' do
     let!(:user) { build(:user) }
 
     it 'ユーザー登録ができる' do
@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
     
   end
 
-  context "ユーザー名が未入力の場合" do
+  context 'ユーザー名が未入力の場合' do
     let!(:user) { build(:user, username: '' ) }
 
     before do 
@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context "Eメールが未入力の場合" do
+  context 'Eメールが未入力の場合' do
     let!(:user) { build(:user, email: '' ) }
 
     before do 
@@ -34,7 +34,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context "パスワードが未入力の場合" do
+  context 'パスワードが未入力の場合' do
     let!(:user) { build(:user, password: '' ) }
 
     before do 
@@ -46,7 +46,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context "パスワードが6文字以上だった場合" do
+  context 'パスワードが6文字以上だった場合' do
     let!(:user) { build(:user, password: 'aaaaaa') }
     
     before do

@@ -13,7 +13,7 @@ RSpec.describe Task, type: :model do
 
   end
 
-  context "タイトルが未入力の場合" do
+  context 'タイトルが未入力の場合' do
     let!(:task) { build(:task, title: '', user: user) }
 
     before do 

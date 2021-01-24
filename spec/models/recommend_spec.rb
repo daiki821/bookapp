@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Recommend, type: :model do
   let!(:user) { create(:user) }
   
-  context "タイトルと内容がある場合" do
+  context 'タイトルと内容がある場合' do
     let!(:recommend) { build(:recommend, user: user) }
 
     it 'おすすめを保存できる' do
