@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Tasks', type: :request do
   let!(:user) { create(:user) }
   let!(:tasks) { create_list(:task, 6, user: user)}
+  let!(:task) { create(:task, user:user) }
 
   describe 'GET /todo_tasks' do
     context 'ログインしている場合' do
@@ -25,46 +26,7 @@ RSpec.describe 'Tasks', type: :request do
 
   end
 
-  describe 'GET /finish_tasks' do
-    context 'ログインしている場合' do
-      before do
-        sign_in user
-      end
 
-      it '200ステータスが返ってくる' do
-        get finish_tasks_path
-        expect(response).to have_http_status(200)
-      end
-    end
-
-    context 'ログインしていない場合' do
-      it 'ログイン画面に遷移する' do
-        get finish_tasks_path
-        expect(response).to redirect_to user_session_path
-      end
-    end
-  end 
-
-  describe 'NEW /task' do
-    context 'ログインしている場合' do
-      before do
-        sign_in user
-        @task = Task.create(id: '1100', title: 'aaaaa', completed_at: '2022-02-22', user: user)
-      end
-  
-      it '200ステータスが返ってくる' do
-        get new_task_path(id: @task.id)
-        expect(response).to have_http_status(200)
-      end
-    end
-
-    context 'ログインしていない場合' do
-      it 'ログイン画面に遷移する' do
-        get new_task_path
-        expect(response).to redirect_to user_session_path
-      end
-    end
-  end
 
 
   describe 'POST /task' do
@@ -92,42 +54,18 @@ RSpec.describe 'Tasks', type: :request do
 
   end
 
-  describe 'EDIT /task' do
-    context 'ログインしている場合' do
-      before do
-        sign_in user
-        @task = Task.create(id: '1100', title: 'aaaaa', completed_at: '2022-02-22', user: user)
-      end
   
-      it '200ステータスが返ってくる' do
-        get edit_task_path(id: @task.id)
-        expect(response).to have_http_status(200)
-      end
-    end
-
-    context 'ログインしていない場合' do
-      before do
-        @task = Task.create(id: '1100', title: 'aaaaa', completed_at: '2022-02-22', user: user)
-      end
-      
-      it 'ログイン画面に遷移する' do
-        get edit_task_path(id: @task.id)
-        expect(response).to redirect_to user_session_path
-      end
-    end
-  end
 
   describe 'DELETE /task' do
     context 'ログインしている場合' do
       before do
         sign_in user
-        @task = Task.create(id: '1100', title: 'aaaaa', completed_at: '2022-02-22', user: user)
       end
   
       it 'タスクが削除できる' do
-        delete task_path(id: @task.id)
+        delete task_path(id: task.id)
         expect(response).to have_http_status(302)
-        expect(@task.destroy!).to eq(@task)
+        expect(task.destroy!).to eq(task)
       end 
     end
 
