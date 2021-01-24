@@ -46,14 +46,23 @@ RSpec.describe 'Tasks', type: :request do
   end 
 
   describe 'NEW /task' do
-    before do
-      sign_in user
-      @task = Task.create(id: '1100', title: 'aaaaa', completed_at: '2022-02-22', user: user)
+    context 'ログインしている場合' do
+      before do
+        sign_in user
+        @task = Task.create(id: '1100', title: 'aaaaa', completed_at: '2022-02-22', user: user)
+      end
+  
+      it '200ステータスが返ってくる' do
+        get new_task_path(id: @task.id)
+        expect(response).to have_http_status(200)
+      end
     end
 
-    it '200ステータスが返ってくる' do
-      get new_task_path(id: @task.id)
-      expect(response).to have_http_status(200)
+    context 'ログインしていない場合' do
+      it 'ログイン画面に遷移する' do
+        get new_task_path
+        expect(response).to redirect_to user_session_path
+      end
     end
   end
 
@@ -84,29 +93,53 @@ RSpec.describe 'Tasks', type: :request do
   end
 
   describe 'EDIT /task' do
-    before do
-      sign_in user
-      @task = Task.create(id: '1100', title: 'aaaaa', completed_at: '2022-02-22', user: user)
+    context 'ログインしている場合' do
+      before do
+        sign_in user
+        @task = Task.create(id: '1100', title: 'aaaaa', completed_at: '2022-02-22', user: user)
+      end
+  
+      it '200ステータスが返ってくる' do
+        get edit_task_path(id: @task.id)
+        expect(response).to have_http_status(200)
+      end
     end
 
-    it '200ステータスが返ってくる' do
-      get edit_task_path(id: @task.id)
-      expect(response).to have_http_status(200)
+    context 'ログインしていない場合' do
+      before do
+        @task = Task.create(id: '1100', title: 'aaaaa', completed_at: '2022-02-22', user: user)
+      end
+      
+      it 'ログイン画面に遷移する' do
+        get edit_task_path(id: @task.id)
+        expect(response).to redirect_to user_session_path
+      end
     end
   end
 
   describe 'DELETE /task' do
-    before do
-      sign_in user
-      @task = Task.create(id: '1100', title: 'aaaaa', completed_at: '2022-02-22', user: user)
+    context 'ログインしている場合' do
+      before do
+        sign_in user
+        @task = Task.create(id: '1100', title: 'aaaaa', completed_at: '2022-02-22', user: user)
+      end
+  
+      it 'タスクが削除できる' do
+        delete task_path(id: @task.id)
+        expect(response).to have_http_status(302)
+        expect(@task.destroy!).to eq(@task)
+      end 
     end
 
-    it 'タスクが削除できる' do
-      delete task_path(id: @task.id)
-      expect(response).to have_http_status(302)
-      expect(@task.destroy!).to eq(@task)
-    end 
-
+    context 'ログインしていない場合' do
+      before do
+        @task = Task.create(id: '1100', title: 'aaaaa', completed_at: '2022-02-22', user: user)
+      end
+      it 'ログイン画面に遷移する' do
+        delete task_path(id: @task.id)
+        expect(response).to redirect_to user_session_path
+      end
+    end
   end
 
 end
