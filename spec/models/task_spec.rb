@@ -16,7 +16,7 @@ RSpec.describe Task, type: :model do
   context 'タイトルが未入力の場合' do
     let!(:task) { build(:task, title: '', user: user) }
 
-    before do 
+    before do
       task.save
     end
 
@@ -40,7 +40,7 @@ RSpec.describe Task, type: :model do
   context '締め切り日が過去の日付だった場合' do
     let!(:task) { build(:task, completed_at: '2001-03-22', user: user )}
 
-    before do 
+    before do
       task.save
     end
 
@@ -48,5 +48,5 @@ RSpec.describe Task, type: :model do
       expect(task.errors.messages[:completed_at][0]).to eq(': 過去の日付は登録できません')
     end
   end
-  
+
 end

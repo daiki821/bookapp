@@ -27,22 +27,22 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
+gem 'active_model_serializers'
 gem 'annotate'
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'haml-rails'
 gem 'devise'
+gem 'faker'
 gem 'font-awesome-sass'
+gem 'haml-rails'
 gem 'kaminari'
 gem 'ransack'
-gem 'active_model_serializers'
-gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rubocop-rails'
-  gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'rubocop-rails'
 end
 
 group :development do

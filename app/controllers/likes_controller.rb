@@ -8,7 +8,7 @@ class LikesController < ApplicationController
   end
 
   def create
-    recommend = Recommend.find(params[:recommend_id]) 
+    recommend = Recommend.find(params[:recommend_id])
     like = recommend.likes.create!(user_id: current_user.id)
     like_count = recommend.likes.count
 
@@ -23,6 +23,5 @@ class LikesController < ApplicationController
 
     render json: { status: 'ok', likeCount: like_count }
   end
-
 
 end

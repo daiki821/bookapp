@@ -5,15 +5,15 @@ RSpec.describe User, type: :model do
     let!(:user) { build(:user) }
 
     it 'ユーザー登録ができる' do
-      expect(user).to be_valid  
+      expect(user).to be_valid
     end
-    
+
   end
 
   context 'ユーザー名が未入力の場合' do
     let!(:user) { build(:user, username: '' ) }
 
-    before do 
+    before do
       user.save
     end
 
@@ -25,7 +25,7 @@ RSpec.describe User, type: :model do
   context 'Eメールが未入力の場合' do
     let!(:user) { build(:user, email: '' ) }
 
-    before do 
+    before do
       user.save
     end
 
@@ -37,7 +37,7 @@ RSpec.describe User, type: :model do
   context 'パスワードが未入力の場合' do
     let!(:user) { build(:user, password: '' ) }
 
-    before do 
+    before do
       user.save
     end
 
@@ -48,7 +48,7 @@ RSpec.describe User, type: :model do
 
   context 'パスワードが6文字以上だった場合' do
     let!(:user) { build(:user, password: 'aaaaaa') }
-    
+
     before do
       user.save
     end
@@ -57,7 +57,6 @@ RSpec.describe User, type: :model do
       expect(user).to be_valid
     end
   end
-  
 
   context 'パスワードが６文字以下だった場合' do
     let!(:user) { build(:user, password: 'aaaaa') }
@@ -67,7 +66,7 @@ RSpec.describe User, type: :model do
     end
 
     it '保存できない' do
-      expect(user.errors.messages[:password][0]).to eq('は6文字以上で入力してください') 
+      expect(user.errors.messages[:password][0]).to eq('は6文字以上で入力してください')
     end
   end
 
@@ -80,7 +79,7 @@ RSpec.describe User, type: :model do
     end
 
     it '保存できない' do
-      expect(@user.errors.messages[:username][0]).to eq('はすでに存在します')  
+      expect(@user.errors.messages[:username][0]).to eq('はすでに存在します')
     end
   end
 
@@ -93,12 +92,8 @@ RSpec.describe User, type: :model do
     end
 
     it '保存できない' do
-      expect(@user.errors.messages[:email][0]).to eq('はすでに存在します')  
+      expect(@user.errors.messages[:email][0]).to eq('はすでに存在します')
     end
   end
 
-
-
-
-  
 end

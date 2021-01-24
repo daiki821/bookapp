@@ -32,7 +32,7 @@ class TasksController < ApplicationController
     end
   end
 
-  def edit 
+  def edit
     @task = current_user.tasks.find(params[:id])
   end
 
@@ -55,11 +55,8 @@ class TasksController < ApplicationController
     else
       redirect_to finish_tasks_path, notice: '削除しました'
     end
-    
+
   end
-
-  
-
 
   private
   def task_params

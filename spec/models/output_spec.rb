@@ -20,7 +20,7 @@ RSpec.describe Output, type: :model do
     end
 
     it '保存できない' do
-      expect(output.errors.messages[:content][0]).to eq('を入力してください')  
+      expect(output.errors.messages[:content][0]).to eq('を入力してください')
     end
   end
 
@@ -32,9 +32,8 @@ RSpec.describe Output, type: :model do
     end
 
     it '保存できない' do
-      expect(output.errors.messages[:task][0]).to eq('を入力してください')  
+      expect(output.errors.messages[:task][0]).to eq('を入力してください')
     end
   end
 
-  
 end

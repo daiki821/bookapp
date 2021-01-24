@@ -19,7 +19,6 @@ class CommentSerializer < ActiveModel::Serializer
 
   attributes :id, :content, :username, :avatar
 
-
   def username
     object.user.username
   end
@@ -31,6 +30,5 @@ class CommentSerializer < ActiveModel::Serializer
       '/assets/default_avatar.png'
     end
   end
-
 
 end

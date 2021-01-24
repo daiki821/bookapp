@@ -26,9 +26,6 @@ RSpec.describe 'Tasks', type: :request do
 
   end
 
-
-
-
   describe 'POST /task' do
     context 'ログインしている場合' do
       before do
@@ -54,19 +51,17 @@ RSpec.describe 'Tasks', type: :request do
 
   end
 
-  
-
   describe 'DELETE /task' do
     context 'ログインしている場合' do
       before do
         sign_in user
       end
-  
+
       it 'タスクが削除できる' do
         delete task_path(id: task.id)
         expect(response).to have_http_status(302)
         expect(task.destroy!).to eq(task)
-      end 
+      end
     end
 
     context 'ログインしていない場合' do

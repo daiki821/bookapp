@@ -2,9 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Recommends', type: :request do
   let!(:user) { create(:user) }
-  let!(:recommends) { create_list(:recommend, 6, user: user) } 
+  let!(:recommends) { create_list(:recommend, 6, user: user) }
   let!(:recommend) { create(:recommend, user:user) }
-
 
   describe 'GET /recommends#index' do
     context 'ログインしている場合' do
@@ -48,7 +47,7 @@ RSpec.describe 'Recommends', type: :request do
         expect(response).to redirect_to user_session_path
       end
     end
-    
+
   end
 
   describe 'DELETE /recommend' do
@@ -72,6 +71,5 @@ RSpec.describe 'Recommends', type: :request do
       end
     end
   end
-
 
 end

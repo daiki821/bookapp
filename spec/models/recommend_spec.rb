@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Recommend, type: :model do
   let!(:user) { create(:user) }
-  
+
   context 'タイトルと内容がある場合' do
     let!(:recommend) { build(:recommend, user: user) }
 
     it 'おすすめを保存できる' do
-      expect(recommend).to be_valid  
+      expect(recommend).to be_valid
     end
   end
 
@@ -19,7 +19,7 @@ RSpec.describe Recommend, type: :model do
     end
 
     it '保存できない' do
-      expect(recommend.errors.messages[:title][0]).to eq('を入力してください') 
+      expect(recommend.errors.messages[:title][0]).to eq('を入力してください')
     end
   end
 
@@ -31,9 +31,9 @@ RSpec.describe Recommend, type: :model do
     end
 
     it '保存できない' do
-      expect(recommend.errors.messages[:content][0]).to eq('を入力してください') 
+      expect(recommend.errors.messages[:content][0]).to eq('を入力してください')
     end
-  
+
   end
 
   context '内容が200文字以上の場合' do
@@ -47,5 +47,5 @@ RSpec.describe Recommend, type: :model do
       expect(recommend.errors.messages[:content][0]).to eq('は200文字以内で入力してください')
     end
   end
-  
+
 end

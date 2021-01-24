@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "Outputs", type: :request do
+RSpec.describe 'Outputs', type: :request do
   let!(:user) { create(:user) }
-  let(:task) { create(:task, user: user) } 
-  let!(:output) { create(:output, user: user, task: task)} 
+  let(:task) { create(:task, user: user) }
+  let!(:output) { create(:output, user: user, task: task)}
   describe 'GET /outputs' do
     context 'ログインしている場合' do
       before do
@@ -21,7 +21,7 @@ RSpec.describe "Outputs", type: :request do
         expect(response).to redirect_to user_session_path
       end
     end
-    
+
   end
 
   describe 'EDIT /outputs' do
@@ -45,7 +45,7 @@ RSpec.describe "Outputs", type: :request do
 
   describe 'PUT /outputs' do
     context 'ログインしている場合' do
-      before do 
+      before do
         sign_in user
       end
       it '保存できる' do
