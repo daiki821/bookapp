@@ -5,7 +5,7 @@ RSpec.describe 'Tasks', type: :request do
   let!(:tasks) { create_list(:task, 6, user: user)}
   let!(:task) { create(:task, user:user) }
 
-  describe 'GET /todo_tasks' do
+  describe 'GET /tasks/todo' do
     context 'ログインしている場合' do
       before do
         sign_in user
@@ -26,7 +26,7 @@ RSpec.describe 'Tasks', type: :request do
 
   end
 
-  describe 'POST /task' do
+  describe 'POST /tasks' do
     context 'ログインしている場合' do
       before do
         sign_in user
@@ -51,7 +51,7 @@ RSpec.describe 'Tasks', type: :request do
 
   end
 
-  describe 'DELETE /task' do
+  describe 'DELETE /tasks/:id' do
     context 'ログインしている場合' do
       before do
         sign_in user

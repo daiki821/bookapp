@@ -5,7 +5,7 @@ RSpec.describe 'Recommends', type: :request do
   let!(:recommends) { create_list(:recommend, 6, user: user) }
   let!(:recommend) { create(:recommend, user:user) }
 
-  describe 'GET /recommends#index' do
+  describe 'GET /recommends' do
     context 'ログインしている場合' do
       before do
         sign_in user
@@ -25,7 +25,7 @@ RSpec.describe 'Recommends', type: :request do
     end
   end
 
-  describe 'POST /recommend' do
+  describe 'POST /recommends' do
     context 'ログインしている場合' do
       before do
         sign_in user
@@ -50,7 +50,7 @@ RSpec.describe 'Recommends', type: :request do
 
   end
 
-  describe 'DELETE /recommend' do
+  describe 'DELETE /recommends/:id' do
     context 'ログインしている場合' do
       before do
         sign_in user

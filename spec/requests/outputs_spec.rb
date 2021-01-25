@@ -4,7 +4,7 @@ RSpec.describe 'Outputs', type: :request do
   let!(:user) { create(:user) }
   let(:task) { create(:task, user: user) }
   let!(:output) { create(:output, user: user, task: task)}
-  describe 'GET /outputs' do
+  describe 'GET /tasks/:task_id/outputs' do
     context 'ログインしている場合' do
       before do
         sign_in user
@@ -26,7 +26,7 @@ RSpec.describe 'Outputs', type: :request do
 
   
 
-  describe 'PUT /outputs' do
+  describe 'PUT /tasks/:task_id/outputs' do
     context 'ログインしている場合' do
       before do
         sign_in user
