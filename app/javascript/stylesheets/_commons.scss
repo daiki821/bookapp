@@ -50,9 +50,9 @@ a{
 .create-recommend-btn{
   font-size: 100px;
   position: fixed;
-  bottom: 100px;
-  right: 150px;
-  z-index: 1;
+  bottom: 30px;
+  right: 30px;
+  z-index: 2;
   color: $main_color;
 
   &:hover{

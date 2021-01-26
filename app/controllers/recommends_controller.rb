@@ -10,7 +10,7 @@ class RecommendsController < ApplicationController
     @recommend = Recommend.find(params[:id])
     @comments = @recommend.comments
   end
-  
+
   def new
     @recommend = current_user.recommends.build
   end
@@ -21,7 +21,7 @@ class RecommendsController < ApplicationController
       redirect_to recommends_path, notice: '保存できました'
     else
       flash.now[:error] = '保存できませんでした'
-      render :new 
+      render :new
     end
   end
 
@@ -30,7 +30,6 @@ class RecommendsController < ApplicationController
     @recommend.destroy!
     redirect_to recommends_path, notice: '削除しました'
   end
-
 
   private
 

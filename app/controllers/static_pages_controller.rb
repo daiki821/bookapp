@@ -3,7 +3,6 @@ class StaticPagesController < ApplicationController
   def home
   end
 
-
   private
   def redirect_user
     redirect_to todo_tasks_path if user_signed_in?

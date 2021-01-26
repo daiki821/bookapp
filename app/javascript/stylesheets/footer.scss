@@ -4,7 +4,7 @@
   bottom: 0;
   text-align: center;
   padding: 15px 0;
-  background-color: $main_color;
+  background-color: #F4F8FA;
 
   .f-container{
     width: 90%;
@@ -14,7 +14,7 @@
     .footer-font{
       font-weight: bold;
       font-size: 10px;
-      color: white;
+      color: $main_color;
     }
   }
 }

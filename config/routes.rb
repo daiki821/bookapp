@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: "users/registrations",
+    registrations: 'users/registrations',
   }
 
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: "static_pages#home"
+  root to: 'static_pages#home'
   post '/tasks/:id/done' => 'tasks#done', as: 'done'
 
   resources :tasks do
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     resources :unfollows, only: [:create]
     resources :favorite, only: [:index]
   end
-  
+
   resource :user do
     resources :favorite, only: [:index]
   end

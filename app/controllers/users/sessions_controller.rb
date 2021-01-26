@@ -3,7 +3,6 @@
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
-
   def new_guest
     user = User.find_or_create_by!(email: 'guest@sample.com') do |user|
       user.password = SecureRandom.urlsafe_base64

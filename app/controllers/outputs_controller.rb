@@ -8,7 +8,6 @@ class OutputsController < ApplicationController
       redirect_to edit_task_outputs_path(task_id: @task.id)
     end
 
-    
   end
 
   def edit
@@ -19,7 +18,7 @@ class OutputsController < ApplicationController
   def update
     @task = Task.find(params[:task_id])
     @output = @task.prepare_output(current_user)
-    
+
     if @output.update(output_params)
       redirect_to task_outputs_path, notice: '保存できました'
     else
