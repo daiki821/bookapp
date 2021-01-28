@@ -35,7 +35,7 @@ class Task < ApplicationRecord
     if image&.attached?
       image
     else
-      '/assets/noimage.png'
+      'noimage.png'
     end
   end
 

@@ -61,7 +61,7 @@ class User < ApplicationRecord
     if avatar&.attached?
       avatar
     else
-      '/assets/default_avatar.png'
+      'default_avatar.png'
     end
   end
 
