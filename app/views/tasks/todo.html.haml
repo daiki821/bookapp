@@ -2,11 +2,11 @@
 .page-switch-box
   = link_to todo_tasks_path, class: 'task-link-box', data: {'turbolinks' => false} do
     %span
-      %i.far.fa-square
+      %i.far.fa-check-square
       未完了
   = link_to finish_tasks_path, class: 'task-link-box click-link', data: {'turbolinks' => false} do
     %span
-      %i.far.fa-check-square
+      %i.far.fa-square
       完了
 .create-btn-box
   = link_to new_task_path, class: 'my-btn mini create-btn' do
