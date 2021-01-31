@@ -12,6 +12,14 @@
         list-style-type: none;
         padding: 0;
 
+        .search-field{
+        }
+        .search-btn{
+          background-color: $main_color;
+          color: #fff;
+          border: 2px solid $main_color;
+        }
+
       }
     }
   }

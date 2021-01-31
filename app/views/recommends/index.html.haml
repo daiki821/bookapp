@@ -10,9 +10,10 @@
   .recommend-card
     - @search_recommends.each do |recommend|
       = render partial: 'commons/recommends', locals: { recommend: recommend }
-    .create-recommend-box
-      = link_to new_recommend_path do
-        %i.fas.fa-plus-circle.create-recommend-btn
+    = link_to new_recommend_path do
+      .create-recommend-box
+        %p 投稿
+        %i.fas.fa-plus.create-recommend-btn
     = paginate @search_recommends
 = javascript_pack_tag 'like'
 = javascript_pack_tag 'dropdown'
