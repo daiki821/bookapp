@@ -47,17 +47,35 @@ a{
   font-size: 23px;
 }
 
-.create-recommend-btn{
-  font-size: 100px;
+.create-recommend-box{
+  background-color: $main_color;
+  text-align: center;
   position: fixed;
+  width: 120px;
+  height:120px;
   bottom: 30px;
   right: 30px;
   z-index: 2;
-  color: $main_color;
+  padding: 20px;
+  border-radius: 50%;
 
   &:hover{
     opacity: .8;
   }
+
+  p{
+    color: white;
+    font-size: 15px;
+    margin: 0 0 5px 0;
+  }
+
+  .create-recommend-btn{
+    font-size: 50px;
+    color: white;
+    
+  }
+  
+
 }
 
 
