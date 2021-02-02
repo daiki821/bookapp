@@ -31,7 +31,7 @@ class CommentSerializer < ActiveModel::Serializer
     if object.user.avatar.attached?
       url_for(object.user.avatar)
     else
-      'default_avatar.png'
+      '/assets/default_avatar.png'
     end
   end
 
