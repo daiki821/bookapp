@@ -3,8 +3,9 @@ class CommentsController < ApplicationController
   def index
     recommend = Recommend.find(params[:recommend_id])
     @comments = recommend.comments.all
+    user_id = current_user.id
 
-    render json: @comments
+    render json: @comments, meta: user_id
   end
 
   def create
@@ -12,8 +13,9 @@ class CommentsController < ApplicationController
     @comment = @recommend.comments.build(comment_params.merge(user_id: current_user.id))
     @comment.save!
     comment_count = @recommend.comments.count
+    user_id = current_user.id
 
-    render json: @comment, meta: comment_count
+    render json: @comment, meta: {count: comment_count, id: user_id }
   end
 
   def destroy

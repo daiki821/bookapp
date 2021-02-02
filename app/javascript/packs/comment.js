@@ -10,12 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
   axios.get(`/recommends/${recommendId}/comments`)
     .then( (response) => {
       const comments = response.data.data
+      const currentUserId = response.data.meta
       comments.forEach( (comment) => {
         addComment(comment)
       })
       
 
       $('.comment-card').each((i,element) => {
+        const userId = $(element).find('.comment-user-icon-box').data().userId
+
+        if(userId == currentUserId){
+          $(element).find('.comment-edit-box').removeClass('hidden')
+        }
+
         $(element).find('.comment-edit-box').on('click', () => {
           openDropdownMenu(element)
         })
@@ -55,12 +62,20 @@ document.addEventListener('DOMContentLoaded', () => {
         comment: {content: content}
       })
         .then( (response) => {
+          const currentUserId = response.data.meta.id
           const comment = response.data.data
+
           addComment(comment)
-          $('.comment-count').text(response.data.meta)
+          $('.comment-count').text(response.data.meta.count)
 
 
           $('.comment-card').each((i,element) => {
+            const userId = $(element).find('.comment-user-icon-box').data().userId
+
+            if(userId == currentUserId){
+              $(element).find('.comment-edit-box').removeClass('hidden')
+            }
+
             $(element).find('.comment-edit-box').off('click')
             $(element).find('.comment-edit-box').on('click', () => {
               openDropdownMenu(element)
