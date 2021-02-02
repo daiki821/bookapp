@@ -2,7 +2,7 @@
   .recommend-card
     .recommend-outline{data: {recommend_id: @recommend.id}}
       .user-info-box
-        = link_to account_path(id: @recommend.user.id) do
+        = link_to account_path(id: @recommend.user.id), data: {'turbolinks' => false} do
           .recommend-user-box
             .recommend-user-icon-box
               = image_tag @recommend.user.avatar?, class: 'recommend-user-icon'
