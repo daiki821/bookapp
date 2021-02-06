@@ -1,24 +1,12 @@
-# README
+# ブックたす
+本を読むのを習慣化させてい人向けに本専用のタスク管理アプリを作成しました。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+下記のページにて公開中です<br>
+https://book-task.com
 
-Things you may want to cover:
 
-* Ruby version
+## アプリ概要
+## 機能
+## 使い方
+## ER図
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
