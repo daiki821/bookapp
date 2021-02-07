@@ -56,10 +56,10 @@ https://book-task.com
 - Capistrano3<br>
 - PostgreSQL 11.5<br>
 #### ER図
-https://gyazo.com/97b4a2c988dfecd26f8739d17d3d4bb3
+https://i.gyazo.com/0c766422572a546bf1ef9d28ed7ef6ff.png
 
 #### インフラ図
-https://gyazo.com/0c766422572a546bf1ef9d28ed7ef6ff
+https://i.gyazo.com/97b4a2c988dfecd26f8739d17d3d4bb3.png
 
 
 ## 製作者
