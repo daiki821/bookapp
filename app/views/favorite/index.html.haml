@@ -14,7 +14,6 @@
           = link_to 'いいね', account_favorite_index_path(account_id: @user.id), data: {'turbolinks' => false}
 .recommend-global-box.recommend-show
   .recommend-card
-    - @favorites.each do |recommend|
-      = render partial: 'commons/recommends', locals: { recommend: recommend }
+    = render partial: 'commons/recommends', collection: @favorites, as: 'recommend'
 = javascript_pack_tag 'like'
 = javascript_pack_tag 'dropdown'
