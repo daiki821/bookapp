@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+20.times do
+  Task.create(
+    user_id: 5,
+    title: Faker::Name.name,  
+    completed_at: Faker::Date.forward(days: 23),
+    completed:'false'
+  )
+
+  Recommend.create(
+    user_id: Faker::Number.digit,
+    title: Faker::Lorem.sentence(word_count: 8),
+    content: Faker::Lorem.sentence(word_count: 19)
+  )
+end
