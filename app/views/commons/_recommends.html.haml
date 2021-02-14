@@ -6,7 +6,7 @@
           = image_tag recommend.user.avatar?, class: 'recommend-user-icon'
         .recommend-username
           = recommend.user.username
-    - if current_user.has_recommend?(recommend)
+    - if recommend.user.id == current_user.id
       .recommend-edit-box
         %i.fas.fa-ellipsis-h.edit-icon 
         .dropdown-box.hidden
@@ -29,9 +29,9 @@
       .heart
         %i.far.fa-heart.heart-icon
       .like-count
-        = recommend.likes.count
+        = recommend.likes.size
     = link_to recommend_path(id: recommend.id), data: {'turbolinks' => false} do
       .comment-btn-box
         %i.far.fa-comment.comment-icon
         .comment-count
-          = recommend.comments.count
+          = recommend.comments.size
