@@ -4,7 +4,7 @@ class RecommendsController < ApplicationController
   def index
     recommend = Recommend.with_attached_image
     @search = recommend.preload(:comments, :likes, user: { avatar_attachment: :blob}).ransack(params[:q])
-    @search_recommends = @search.result.page(params[:page]).per(15).order(created_at: :desc)
+    @search_recommends = @search.result.page(params[:page]).per(4).order(created_at: :desc)
   end
 
   def show
