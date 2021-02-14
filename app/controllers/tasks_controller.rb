@@ -3,12 +3,12 @@ class TasksController < ApplicationController
 
   # まだ未完了のタスク一覧
   def todo
-    todo = current_user.tasks.where(completed: 'false')
+    todo = current_user.tasks.with_attached_image.where(completed: 'false')
     @todo = todo.page(params[:page]).per(4)
   end
   # 完了したタスク一覧
   def finish
-    finish = current_user.tasks.where(completed: 'true')
+    finish = current_user.tasks.with_attached_image.where(completed: 'true')
     @finish = finish.page(params[:page]).per(4)
   end
 

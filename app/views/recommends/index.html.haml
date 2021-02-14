@@ -8,8 +8,7 @@
               = f.search_field :title_cont, placeholder: '本のタイトルを入力', class: 'search-field'
               = f.submit "検索", class: 'search-btn'
   .recommend-card
-    - @search_recommends.each do |recommend|
-      = render partial: 'commons/recommends', locals: { recommend: recommend }
+    = render partial: 'commons/recommends', collection: @search_recommends, as: 'recommend'
     = link_to new_recommend_path do
       .create-recommend-box
         %p 投稿
