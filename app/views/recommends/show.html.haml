@@ -14,7 +14,7 @@
             .dropdown-box.hidden
               .d-menu-box
                 .d-menu
-                  = link_to '削除',recommend_path(id: @recommend.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'}
+                  = link_to '削除',recommend_path(id: @recommend.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか？'}, class: 'red'
       .recommend-box
         - if @recommend.image.attached?
           = image_tag @recommend.image,class: 'recommend-image'

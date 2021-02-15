@@ -14,7 +14,8 @@ class TasksController < ApplicationController
 
   def done
     task = current_user.tasks.find(params[:id])
-    @task = task.update(completed: 'true')
+    day = Date.today
+    @task = task.update(completed: 'true', end_date: day)
     redirect_to todo_tasks_path
   end
 
@@ -65,6 +66,7 @@ class TasksController < ApplicationController
       :title,
       :completed_at,
       :completed,
+      :end_date
     )
   end
 end

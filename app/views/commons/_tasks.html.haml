@@ -1,16 +1,24 @@
 %table.list-box
   %tr.list-title
-    %th image
+    %th 画像
     %th タイトル
-    %th 締め切り日
+    - if current_page?(todo_tasks_path)
+      %th 締め切り日
+    - else 
+      %th 読了日
   - tasks.each do |task|
     %tr.book-list
       %td
         = image_tag task.has_image? ,class: 'list-image'
       %td.book-title
         = task.title
-      %td.book-completed_at
-        = l task.completed_at, format: :long
+      %td.book-date
+        - if current_page?(todo_tasks_path)
+          .book-completed_at
+            = l task.completed_at, format: :long
+        - else
+          .book-end_date
+            = l task.end_date, format: :long
       %td
         = link_to done_path(id: task.id), data: { method: 'post'}, class: "#{add_hidden_class(finish_tasks_path)} task-finish-btn" do
           .finish-box
@@ -30,5 +38,5 @@
               .d-menu
                 = link_to '編集', edit_task_path(id: task.id)
               .d-menu
-                = link_to '削除', task_path(id: task.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？'}
+                = link_to '削除', task_path(id: task.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？'}, class: 'red'
 

@@ -32,6 +32,13 @@ a{
   display: none;
 }
 
+.red{
+  color: red;
+  &:hover{
+    color: red;
+  }
+}
+
 
 // fontawesome-----
 
