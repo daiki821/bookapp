@@ -44,6 +44,10 @@ a{
 
 .edit-icon{
   font-size: 30px;
+  
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .comment-icon{
