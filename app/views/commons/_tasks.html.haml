@@ -17,11 +17,8 @@
           .book-completed_at
             = l task.completed_at, format: :long
         - else
-          - if task.end_date
-            .book-end_date
-              = l task.end_date, format: :long
-          - else
-            .book-end_date 不明
+          .book-end_date
+            = l task.end_date, format: :long
       %td
         = link_to done_path(id: task.id), data: { method: 'post'}, class: "#{add_hidden_class(finish_tasks_path)} task-finish-btn" do
           .finish-box
