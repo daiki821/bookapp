@@ -9,8 +9,9 @@
     .field
       = f.label :completed_at, '締め切り日'
       = f.date_field :completed_at, min: Date.current
-    .field
-      = f.label :compleated, '読み終わった？'
-      = f.check_box :completed, {}, 'true', 'false'
+    - unless current_page?(new_task_path)
+      .field
+        = f.label :compleated, '読み終わった？'
+        = f.check_box :completed, {}, 'true', 'false'
     .actions
       = f.submit "保存", disable_with: '送信中...', class: 'btn btn-light my-btn'
